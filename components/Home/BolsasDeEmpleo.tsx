@@ -36,10 +36,9 @@ const BolsasDeEmpleo = () => {
           <div className="bg-white rounded shadow p-10 ">
           <Link href="/Sectores/carpinteria">
 
-            <h3 className="text-xl  mb-2">Sector de la carpintería metálica</h3>
+            <h3 className="text-xl  mb-2">Sector de las ventanas, puertas y cerramientos</h3>
             <p className="mb-4">
-              Contenido del sector de la carpintería metálica. Aquí puedes
-              escribir una descripción o información adicional.
+              Carpintería de metálica, de aluminio, PVC y mixta (madera y aluminio)
             </p>
             <div className="flex justify-center">
               <Image
@@ -55,10 +54,10 @@ const BolsasDeEmpleo = () => {
           <Link href="/Sectores/otros">
 
             <h3 className="text-xl mb-2">
-              Otros sectores técnicos especializados
+            Sector de la protección solar.
             </h3>
             <p className="mb-4">
-              Contenido de otros sectores técnicos especializados. Aquí puedes
+            Contenido del sector de la protección solar. Aquí puedes
               escribir una descripción o información adicional.
             </p>
             <div className="flex justify-center">
