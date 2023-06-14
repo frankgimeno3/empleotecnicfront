@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-gray-500 bg-opacity-50 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base ">
       <div className="md:ml-5 xl:pl-1 hover:bg-gray-800 hover:bg-opacity-25">
         <Link href="/" passHref>
-          <Image src="/icons/appicon.jpg" alt="logo" width={30} height={30} />
+          <Image src="/icons/appiconw.jpg" alt="logo" width={30} height={30} />
         </Link>
       </div>
       <div className="flex items-center space-x-4 xl:pr-5 md:pr-1">

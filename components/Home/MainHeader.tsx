@@ -13,7 +13,7 @@ const MainHeader = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
         <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-full pt-10 pb-10">
           <h1 className="text-4xl md:text-6xl text-gray-100 font-bold">
-            TECNOBOLSA
+            EMPLEOTECNIC
           </h1>
           <p className="xl:text-xl text-white max-w-[45vw] sm:max-w-[50vw] m-auto pt-3 font-light sm:text-xs md:text-xs">
             Conectamos empresas con personal técnico especializado en los 21 países de habla hispana. Únase a nosotros para encontrar talento o empleo desde hoy mismo.

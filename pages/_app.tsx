@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return(
     <>
       <Head>
-        <title>Tecnobolsa</title>
-        <link rel="icon" href="/icons/appicon.jpg" />
+        <title>Empleotecnic.com</title>
+        <link rel="icon" href="/icons/appiconw.jpg" />
       </Head>
 
     <Layout>
