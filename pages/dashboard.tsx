@@ -63,9 +63,8 @@ export default function Dashboard() {
             E
           </button>
         </Link>
-      </nav>
-      <div style={{ margin: "0 20vw" }}>
-        <div className="flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 mt-20">
+        {/* <div style={{ margin: "0 20vw" }} > */}
+        <div className="flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 ">
           {isSMorMD && (
             <div className="relative" ref={menuRef}>
               <Image
@@ -174,6 +173,8 @@ export default function Dashboard() {
             </div>
           )}
         </div>
+      </nav>
+      <div className="mt-20 p-20 pt-3">
         {renderComponent("Notificaciones", <Notificaciones />)}
         {renderComponent("BolsaDeEmpleo", <BolsaDeEmpleo />)}
         {renderComponent("MisOfertas", <MisOfertas />)}
@@ -184,7 +185,7 @@ export default function Dashboard() {
             width: 0%;
           }
         `}</style>
-      </div>
+        </div>
     </>
   );
 }
