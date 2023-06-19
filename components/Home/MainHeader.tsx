@@ -11,11 +11,11 @@ const MainHeader = () => {
         muted
       ></video>
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-        <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-full pt-10 pb-10">
-          <h1 className="text-4xl md:text-6xl text-gray-100 font-bold">
+        <div className="bg-cyan-950 bg-opacity-60 backdrop-filter backdrop-blur-lg w-full pt-10 pb-10">
+          <h1 className="text-4xl md:text-6xl text-sky-50 font-bold">
             EMPLEOTECNIC
           </h1>
-          <p className="xl:text-xl text-white max-w-[45vw] sm:max-w-[50vw] m-auto pt-3 font-light sm:text-xs md:text-xs">
+          <p className="xl:text-2xl text-slate-200 max-w-[45vw] sm:max-w-[50vw] m-auto pt-3 font-light sm:text-xs md:text-xs">
             Conectamos empresas con personal técnico especializado en los 23 países de habla hispana. Únase a nosotros para encontrar talento o empleo desde hoy mismo.
           </p>
         </div>

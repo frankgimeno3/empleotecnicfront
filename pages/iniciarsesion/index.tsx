@@ -1,20 +1,24 @@
-const Inter = require("next/font/google").Inter;
-const { useState } = require("react");
-const authService = require("../../services/auth.service");
-const Link 
+import { useState } from "react";
+import authService from "../../services/auth.service";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 function IniciarSesion() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleEmailChange = (e) => {
+  const router = useRouter();
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
-  const handlePasswordChange = (e) => {
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const requestBody = {
@@ -27,7 +31,7 @@ function IniciarSesion() {
       .then((response) => {
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/dashboard");
+        router.push("/dashboard");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -73,13 +77,13 @@ function IniciarSesion() {
                 />
               </div>
 
-              <Link                 href="/dashboard">
-              <button
-                type="submit"
-                className="mt-8 bg-white text-gray-800 rounded-full py-2 px-4 border-b-2 border-gray-500 hover:bg-gray-500 hover:bg-opacity-25 hover:text-gray-900"
-              >
-                Iniciar sesión
-              </button>
+              <Link href="/dashboard">
+                <button
+                  type="submit"
+                  className="mt-8 bg-white text-gray-800 rounded-full py-2 px-4 border-b-2 border-gray-500 hover:bg-gray-500 hover:bg-opacity-25 hover:text-gray-900"
+                >
+                  Iniciar sesión
+                </button>
               </Link>
             </form>
           </div>
@@ -89,4 +93,4 @@ function IniciarSesion() {
   );
 }
 
-module.exports = IniciarSesion;
+export default IniciarSesion;

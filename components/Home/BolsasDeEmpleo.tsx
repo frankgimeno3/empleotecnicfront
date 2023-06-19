@@ -1,77 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const BolsasDeEmpleo = () => {
+  const [scrollOpacity, setScrollOpacity] = useState(0.5);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      const pageHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = (scrollPosition / pageHeight) * 100;
+      const opacity = (scrollPercentage - 20) / 20;
+      setScrollOpacity(opacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-      <div className="bg-gray-200 bg-opacity-60 backdrop-filter backdrop-blur-lg w-full p-10 align-center text-center ">
-        <div className="pb-20">
-          <h1 className="text-4xl  mt-8 mb-3">
-            Bolsas de empleo técnico{" "}
-            <span className="font-bold">especializado </span>
-          </h1>
-          <h2 className="text-lg  ">
-            Haga click en uno de los sectores que aparecen a continuación <br />
-            para acceder a la bolsa de empleo especializada que desee
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-1 mb-10 max-w-7xl mx-auto">
-          <div className="bg-white rounded shadow p-8 ">
+    <div className="w-full p-10 align-center text-center">
+      <div className="pb-20">
+        <h1 className="text-4xl mt-8 mb-3 text-white">
+          Bolsas de empleo técnico{" "}
+          <span className="font-bold text-white">especializado</span>
+        </h1>
+        <h2 className="text-lg text-white">
+          Haga click en uno de los sectores que aparecen a continuación <br />
+          para acceder a la bolsa de empleo especializada que desee
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 max-w-7xl mx-auto md:grid-cols-3 gap-20 p-1 mb-10 ">
         <Link href="/Sectores/vidrio">
-            <h3 className="text-xl  mb-2">Sector del vidrio plano</h3>
-            <p className="mb-4">
+          <div
+            className="bg-white rounded shadow p-10"
+            style={{ backgroundColor: `rgba(255, 255, 255, ${scrollOpacity})`, height: "30vh" }}
+          >
+            <h3 className="text-2xl mb-2 hover:text-blue-500">
+              Sector del vidrio plano
+            </h3>
+            <p className="mb-2">
               Contenido del sector del vidrio plano. Aquí puedes escribir una
               descripción o información adicional.
             </p>
-            <div className="flex justify-center">
-              <Image
-                src="/images/imagenGenerica2.png"
-                alt="Imagen 1"
-                width={50}
-                height={50}
-              />
-            </div>
-          </Link>
           </div>
-          <div className="bg-white rounded shadow p-10 ">
-          <Link href="/Sectores/carpinteria">
-
-            <h3 className="text-xl  mb-2">Sector de las ventanas, puertas y cerramientos</h3>
-            <p className="mb-4">
-              Carpintería de metálica, de aluminio, PVC y mixta (madera y aluminio)
-            </p>
-            <div className="flex justify-center">
-              <Image
-                src="/images/imagenGenerica2.png"
-                alt="Imagen 2"
-                width={50}
-                height={50}
-              />
-            </div>
-            </Link>
-          </div>
-          <div className="bg-white rounded shadow p-10">
-          <Link href="/Sectores/otros">
-
-            <h3 className="text-xl mb-2">
-            Sector de la protección solar.
+        </Link>
+        <Link href="/Sectores/carpinteria">
+          <div
+            className="bg-white rounded shadow p-10"
+            style={{ backgroundColor: `rgba(255, 255, 255, ${scrollOpacity})`, height: "30vh" }}
+          >
+            <h3 className="text-2xl mb-2 hover:text-blue-500">
+              Sector de las ventanas, puertas y cerramientos
             </h3>
-            <p className="mb-4">
-            Contenido del sector de la protección solar. Aquí puedes
-              escribir una descripción o información adicional.
+            <p className="mb-2">
+              Carpintería de metálica, de aluminio, PVC y mixta (madera y
+              aluminio)
             </p>
-            <div className="flex justify-center">
-              <Image
-                src="/images/imagenGenerica2.png"
-                alt="Imagen 3"
-                width={50}
-                height={50}
-              />
-            </div>
-            </Link>
           </div>
-        </div>
+        </Link>
+        <Link href="/Sectores/otros">
+          <div
+            className="bg-white rounded shadow p-10"
+            style={{ backgroundColor: `rgba(255, 255, 255, ${scrollOpacity})`, height: "30vh" }}
+          >
+            <h3 className="text-2xl mb-2 hover:text-blue-500">
+              Sector de la protección solar
+            </h3>
+            <p className="mb-2">
+              Contenido del sector de la protección solar. Aquí puedes escribir
+              una descripción o información adicional.
+            </p>
+          </div>
+        </Link>
       </div>
+    </div>
   );
 };
 

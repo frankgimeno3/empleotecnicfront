@@ -7,7 +7,7 @@ import SobreNosotros from '../components/Home/SobreNosotros'
 export default function Home() {
   return (
   
-      <div className="flex flex-col items-center  font-mono text-sm ">
+      <div className="flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 ">
         <MainHeader/>
         <BolsasDeEmpleo/>
         <SobreNosotros/>

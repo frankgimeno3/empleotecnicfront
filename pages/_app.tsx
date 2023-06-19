@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Empleotecnic.com</title>
-        <link rel="icon" href="/icons/appiconw.jpg" />
+        <link rel="icon" href="/icons/minimal.png" />
       </Head>
 
     <Layout>
