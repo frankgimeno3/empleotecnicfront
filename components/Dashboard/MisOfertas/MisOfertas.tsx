@@ -3,7 +3,7 @@ import MyOfferCard from './MyOfferCard'
 
 const MisOfertas = () => {
     return (
-      < div className="bg-gray-200 pt-1">
+      < div className=" mt-10 p-20 bg-gray-200 pt-1">
       <MyOfferCard />
       <MyOfferCard />
       <MyOfferCard />
