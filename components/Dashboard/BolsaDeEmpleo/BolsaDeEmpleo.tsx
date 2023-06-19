@@ -4,7 +4,7 @@ import ListadoOfertasSolicitudes from './ListadoOfertasSolicitudes'
  
 const BolsaDeEmpleo = () => {
   return (
-    <div className="bg-gray-200  w-full pt-1">
+    <div className="mt-10 p-20  mx-10vw w-full">
       <QueYDonde/>
       <FormularioBusquedaAvanzada/>
       <ListadoOfertasSolicitudes/>
