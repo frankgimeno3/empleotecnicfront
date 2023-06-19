@@ -2,7 +2,7 @@ import OfferCard from './Offercard'
 
 const ListadoOfertasSolicitudes = () => {
     return (
-      <div className="bg-gray-200 mx-10vw w-full">
+      <div className=" mx-10vw w-full pt-0 mt-0">
         <OfferCard/>
         <OfferCard/>
         <OfferCard/>
