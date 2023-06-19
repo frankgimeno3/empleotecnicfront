@@ -1,7 +1,8 @@
-import { useState } from "react";
-import authService from "../../services/auth.service";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import authService from "../../services/auth.service";
+
 
 function IniciarSesion() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ function IniciarSesion() {
 
     const requestBody = {
       email: email,
-      password: password
+      password: password,
     };
 
     authService
@@ -39,7 +40,20 @@ function IniciarSesion() {
       });
   };
 
+  // Placeholder implementation for storeToken
+  const storeToken = (token: string) => {
+    // Implement your logic to store the token
+    console.log("Token stored:", token);
+  };
+
+  // Placeholder implementation for authenticateUser
+  const authenticateUser = () => {
+    // Implement your logic to authenticate the user
+    console.log("User authenticated");
+  };
+
   return (
+    
     <div className="relative w-full h-screen">
       <video
         className="absolute top-0 left-0 object-cover w-screen h-screen"
