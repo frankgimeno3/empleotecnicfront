@@ -15,8 +15,9 @@ type ComponentName =
   | "ProcesosActivos";
 
 export default function Dashboard() {
-  const [selectedButton, setSelectedButton] =
-    useState<ComponentName>("Notificaciones");
+  const [selectedButton, setSelectedButton] = useState<ComponentName>(
+    "Notificaciones"
+  );
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -59,12 +60,11 @@ export default function Dashboard() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-70 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base ">
         <Link href="/dashboard" passHref>
-          <button className="bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer">
+          <button className="bg-opacity-5 text-white rounded-full mr-1 py-2 px-4 border-2 hover:bg-white hover:bg-opacity-50 hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer">
             E
           </button>
         </Link>
-        {/* <div style={{ margin: "0 20vw" }} > */}
-        <div className="flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-100 to-cyan-150 ">
+        <div className="flex flex-col items-center  font-mono text-sm  ">
           {isSMorMD && (
             <div className="relative" ref={menuRef}>
               <Image
@@ -77,40 +77,40 @@ export default function Dashboard() {
               {showMenu && (
                 <div className="absolute top-0 left-0 bg-white border border-gray-300">
                   <button
-                    className={`p-5 bg-white button-menu ${
-                      selectedButton === "Notificaciones" ? "bg-gray-300" : ""
+                    className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer button-menu ${
+                      selectedButton === "Notificaciones" ? "bg-white" : ""
                     }`}
                     onClick={() => handleButtonClick("Notificaciones")}
                   >
                     Notificaciones
                   </button>
                   <button
-                    className={`p-5 bg-white button-menu ${
-                      selectedButton === "BolsaDeEmpleo" ? "bg-gray-300" : ""
+                    className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer button-menu ${
+                      selectedButton === "BolsaDeEmpleo" ? "bg-white" : ""
                     }`}
                     onClick={() => handleButtonClick("BolsaDeEmpleo")}
                   >
                     Bolsa de Empleo
                   </button>
                   <button
-                    className={`p-5 bg-white button-menu ${
-                      selectedButton === "MisOfertas" ? "bg-gray-300" : ""
+                    className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer button-menu ${
+                      selectedButton === "MisOfertas" ? "bg-white" : ""
                     }`}
                     onClick={() => handleButtonClick("MisOfertas")}
                   >
                     Mis Ofertas
                   </button>
                   <button
-                    className={`p-5 bg-white button-menu ${
-                      selectedButton === "PublicarOferta" ? "bg-gray-300" : ""
+                    className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer button-menu ${
+                      selectedButton === "PublicarOferta" ? "bg-white" : ""
                     }`}
                     onClick={() => handleButtonClick("PublicarOferta")}
                   >
                     Publicar Oferta
                   </button>
                   <button
-                    className={`p-5 bg-white button-menu ${
-                      selectedButton === "ProcesosActivos" ? "bg-gray-300" : ""
+                    className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer button-menu ${
+                      selectedButton === "ProcesosActivos" ? "bg-white" : ""
                     }`}
                     onClick={() => handleButtonClick("ProcesosActivos")}
                   >
@@ -123,48 +123,40 @@ export default function Dashboard() {
           {!isSMorMD && (
             <div className="display-flex ">
               <button
-                className={`p-5 ${
-                  selectedButton === "Notificaciones"
-                    ? "bg-gray-300"
-                    : "bg-white"
+                className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+                  selectedButton === "Notificaciones" ? "bg-white bg-opacity-100 text-cyan-950" : ""
                 }`}
                 onClick={() => handleButtonClick("Notificaciones")}
               >
                 Notificaciones
               </button>
               <button
-                className={`p-5 ${
-                  selectedButton === "BolsaDeEmpleo"
-                    ? "bg-gray-300"
-                    : "bg-white"
+                className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+                  selectedButton === "BolsaDeEmpleo" ? "bg-white bg-opacity-100 text-cyan-950" : ""
                 }`}
                 onClick={() => handleButtonClick("BolsaDeEmpleo")}
               >
                 Bolsa de Empleo
               </button>
               <button
-                className={`p-5 ${
-                  selectedButton === "MisOfertas" ? "bg-gray-300" : "bg-white"
+                className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+                  selectedButton === "MisOfertas" ? "bg-white bg-opacity-100 text-cyan-950" : ""
                 }`}
                 onClick={() => handleButtonClick("MisOfertas")}
               >
                 Mis Ofertas
               </button>
               <button
-                className={`p-5 ${
-                  selectedButton === "PublicarOferta"
-                    ? "bg-gray-300"
-                    : "bg-white"
+                className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+                  selectedButton === "PublicarOferta" ? "bg-white bg-opacity-100 text-cyan-950" : ""
                 }`}
                 onClick={() => handleButtonClick("PublicarOferta")}
               >
                 Publicar Oferta
               </button>
               <button
-                className={`p-5 ${
-                  selectedButton === "ProcesosActivos"
-                    ? "bg-gray-300"
-                    : "bg-white"
+                className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+                  selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-100 text-cyan-950" : ""
                 }`}
                 onClick={() => handleButtonClick("ProcesosActivos")}
               >
@@ -175,7 +167,6 @@ export default function Dashboard() {
         </div>
       </nav>
       <div className="pt-3 flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 ">
-
         {renderComponent("Notificaciones", <Notificaciones />)}
         {renderComponent("BolsaDeEmpleo", <BolsaDeEmpleo />)}
         {renderComponent("MisOfertas", <MisOfertas />)}
@@ -186,7 +177,11 @@ export default function Dashboard() {
             width: 0%;
           }
         `}</style>
-        </div>
+      </div>
     </>
   );
 }
+
+
+
+
