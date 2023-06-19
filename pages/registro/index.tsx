@@ -68,7 +68,8 @@ export default function Registro() {
 
           <button
             onClick={handleRegister}
-            className="mt-8 bg-white text-gray-800 rounded-full py-2 px-4 border-b-2 border-gray-500 hover:bg-gray-500 hover:bg-opacity-25 hover:text-gray-900"          >
+            className="mt-8 bg-white text-gray-800 rounded-full py-2 px-4 border-b-2 border-gray-500 hover:bg-gray-600 hover:text-white"
+            >
             Crear cuenta
           </button>
         </div>
