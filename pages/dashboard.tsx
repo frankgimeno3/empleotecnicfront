@@ -174,7 +174,8 @@ export default function Dashboard() {
           )}
         </div>
       </nav>
-      <div className="mt-20 p-20 pt-3">
+      <div className="pt-3 flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 ">
+
         {renderComponent("Notificaciones", <Notificaciones />)}
         {renderComponent("BolsaDeEmpleo", <BolsaDeEmpleo />)}
         {renderComponent("MisOfertas", <MisOfertas />)}
