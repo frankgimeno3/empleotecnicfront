@@ -85,9 +85,94 @@ class PublicarOferta extends Component {
               required
             />
           </div>
+          
+          <div className="mb-4">
+            <label htmlFor="salario" className="block mb-2">
+              Salario:
+            </label>
+            <textarea
+              id="salario"
+              name="salario"
+              value={salario}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          
+          <div className="mb-4">
+            <label htmlFor="jornada" className="block mb-2">
+              Jornada:
+            </label>
+            <textarea
+              id="jornada"
+              name="jornada"
+              value={jornada}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+          
+          <div className="mb-4">
+            <label htmlFor="diaslaborales" className="block mb-2">
+              Días Laborales:
+            </label>
+            <textarea
+              id="diaslaborales"
+              name="diaslaborales"
+              value={diasLaborales}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+                    
+          <div className="mb-4">
+            <label htmlFor="ubicacion" className="block mb-2">
+              Ubicación:
+            </label>
+            <textarea
+              id="ubicacion"
+              name="ubicacion"
+              value={ubicacion}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
 
-          {/* Resto de los campos del formulario... */}
+                    
+          <div className="mb-4">
+            <label htmlFor="beneficios" className="block mb-2">
+              Beneficios:
+            </label>
+            <textarea
+              id="beneficios"
+              name="beneficios"
+              value={beneficios}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
 
+                    
+          <div className="mb-4">
+            <label htmlFor="requisitos" className="block mb-2">
+              Requisitos:
+            </label>
+            <textarea
+              id="requisitos"
+              name="requisitos"
+              value={requisitos}
+              onChange={this.handleChange}
+              className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
+              required
+            />
+          </div>
+
+ 
           <div className="mt-6">
             <button
               type="submit"
