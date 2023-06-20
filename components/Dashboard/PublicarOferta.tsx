@@ -38,8 +38,10 @@ class PublicarOferta extends Component {
     } = this.state;
 
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-10 ">
+        <div className='mt-6 p-10 bg-gray-100'>
         <form onSubmit={this.handleSubmit} className="max-w-lg mx-auto">
+          <h1 className='font-bold text-3xl mb-5'>Publicar Ofertas</h1>
           <div className="mb-4">
             <label htmlFor="titulo" className="block mb-2">
               Título de la oferta:
@@ -95,6 +97,7 @@ class PublicarOferta extends Component {
             </button>
           </div>
         </form>
+        </div>
       </div>
     );
   }
