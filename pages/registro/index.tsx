@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Inter } from "next/font/google";
+import Navbar from '../../components/Navbar/Navbar'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function Registro() {
   return (
     
     <div className="relative w-full h-screen">
+      <Navbar/>
       <video
         className="absolute top-0 left-0 object-cover w-screen h-screen"
         src="/video/perfiles.mp4"

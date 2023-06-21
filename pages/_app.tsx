@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icons/minimal.png" />
       </Head>
 
-    <Layout>
+    <Layout>  
     <Component {...pageProps} />
     </Layout>
     </>

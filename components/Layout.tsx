@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import 'tailwindcss/tailwind.css';
-import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
 
 interface LayoutProps {
