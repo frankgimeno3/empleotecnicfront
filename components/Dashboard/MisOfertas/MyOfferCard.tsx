@@ -2,7 +2,7 @@ import React from "react";
 
 const MyOfferCard = () => {
   return (
-    <div className="flex justify-center items-center my-10 mx-20">
+    <div className="flex justify-center items-center my-5 mx-20">
       <div className="bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-xl font-semibold mb-2">
           Operario de Fábrica - Extrusión de Aluminio Industrial
