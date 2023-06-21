@@ -2,8 +2,8 @@ import TarjetaCandidato from "./TarjetaCandidato";
 
 const ProcesosActivos = () => {
   return (
-    <div className="mt-6 mx-10vw w-full">
-      <div className="mt-10 p-20 bg-gray-200 ">
+    <div className="mt-6 mx-10vw w-full bg-gradient-to-r from-gray-700 to-cyan-950">
+      <div className="mt-10 mx-20 p-20 bg-gray-200 ">
         <h1 className="text-black text-3xl">
           Procesos Activos
         </h1>
