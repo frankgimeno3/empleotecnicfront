@@ -1,4 +1,4 @@
-import {Schema, model, models} from 'mongoose';
+import mongoose, {Schema, model, models} from 'mongoose';
 
 const userSchema = new Schema ({
     email: {
@@ -15,11 +15,12 @@ const userSchema = new Schema ({
         required: [true, "Password is required"],
         select: false   
     },
-    fullName: {
+    fullname: {
         type : String,
-        required: [true, "Full Name is required"],
+        required: [true, "Full name is required"],
     },
 })
 
-const User = models.User || model('User', userSchema)
+const User = 
+mongoose.models.User || mongoose.model('User', userSchema)
 export default User;
