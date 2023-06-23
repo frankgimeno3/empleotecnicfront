@@ -13,13 +13,13 @@ export default function Home() {
             <title>Empleotecnic</title>
             <meta name="Empleotecnic" content="Bolsa de empleo especializada en perfiles técnicos para el sector del vidrio, carpintería y protección solar" />        
             </Head>
-
       <div>      
       <Navbar />
       <div className="flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950 ">
         <MainHeader/>
         <BolsasDeEmpleo/>
         <SobreNosotros/>
+
       </div>
       </div>
       </>
@@ -27,6 +27,3 @@ export default function Home() {
 }
 
 
-export const getServerSideProps = async (context)=>{
-
-}

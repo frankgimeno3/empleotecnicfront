@@ -30,3 +30,15 @@ export default function Terminos() {
     </div>
   );
 }
+
+
+export const getServerSideProps = async (context)=>{
+  const res = await fetch("http://localhost:5000/users/");
+  const users = await res.json()
+
+  return{
+    props:{
+      user: users
+    }
+  }
+}
