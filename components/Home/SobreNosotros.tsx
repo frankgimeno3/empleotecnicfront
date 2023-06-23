@@ -48,10 +48,12 @@ const SobreNosotros = () => {
             </div>
           </div>
           <div className="flex justify-center mx-auto text-base mt-10 ">
+            <Link href="/quienessomos">
             <button className="bg-stone-100  text-gray-800 py-2 px-4  rounded-md border-b-2  hover:bg-gray-600 hover:border-b-white hover:text-white">
               Descubra hoy mismo cómo podemos ayudarle a alcanzar el éxito en el
               ámbito técnico especializado.
             </button>
+            </Link>
           </div>
         </div>
       </div>
