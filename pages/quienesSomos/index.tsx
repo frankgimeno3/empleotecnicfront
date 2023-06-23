@@ -43,7 +43,10 @@ export default function QuienesSomos(): JSX.Element {
         </p>
         <h2 className="text-2xl font-bold mb-4">Contáctanos</h2>
         <p className="mb-4">
-          Si estás interesado en nuestros servicios o deseas obtener más información, no dudes en ponerte en contacto con nosotros. Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.
+          Si estás interesado en nuestros servicios o deseas obtener más información, no dudes en ponerte en contacto con nosotros! 
+        </p>
+        <p className="font-bold">
+        Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.
         </p>
         <div className="bg-white p-8 rounded shadow">
           <h3 className="text-xl font-bold mb-4">Formulario de contacto</h3>
@@ -101,7 +104,7 @@ export default function QuienesSomos(): JSX.Element {
       <footer className="bg-gray-800 py-4">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white">
-            © 2023 Nuestra Empresa. Todos los derechos reservados.
+            © 2023 PROPORCION 3, S.A. Todos los derechos reservados.
           </p>
         </div>
       </footer>
