@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function QuienesSomos(): JSX.Element {
+export default function Quienessomos() {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
