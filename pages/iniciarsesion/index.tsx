@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 const IniciarSesion = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
   const handleLogin = async () => {
@@ -24,7 +25,7 @@ const IniciarSesion = () => {
         router.push('/dashboard');
       } else {
         const { message } = await response.json();
-        // Maneja el mensaje de error
+        setErrorMessage('Credenciales incorrectas');
       }
     } catch (error) {
       console.error(error);
@@ -38,6 +39,7 @@ const IniciarSesion = () => {
       <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
       <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Iniciar sesión</button>
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 };
