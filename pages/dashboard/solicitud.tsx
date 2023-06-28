@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent, MouseEvent } from "react";
+import { useState, FormEvent } from "react";
 import OfferCard2 from "../../components/Dashboard/BolsaDeEmpleo/Offercard2";
 
 const Solicitud = () => {
@@ -10,7 +10,7 @@ const Solicitud = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    // Here you can perform actions with the form data
+    // Aquí puedes realizar acciones con los datos del formulario
   };
 
   return (
@@ -33,7 +33,7 @@ const Solicitud = () => {
             className="mr-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={() => alert("Autocompletar con datos del perfil")}
           >
-            Autocompletar con datos del perfil?
+            Autocompletar con datos del perfil
           </button>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -44,76 +44,92 @@ const Solicitud = () => {
         </div>
         {showForm && (
           <>
-          <form className="mt-6 ml-20" onSubmit={handleSubmit}>
-            <div>
-              <label className="mt-10">
-                Nombre y apellidos:
-                <input
-                  type="text"
-                  className="    rounded-lg shadow-lg p-2"
-                  required />
-          </label>
-          </div>
-          <div className="mt-5">
-
-          <label className="mt-10">
-              Nacionalidad:
-              <br />
-              <input
-                type="text"
-                className="    rounded-lg shadow-lg p-2"
-                required />
-            </label>
-            </div>
-
-            
-            <label className="mt-10">
-              Sexo:
-              <br />
-              <input
-                type="text"
-                className="    rounded-lg shadow-lg p-2"
-                required />
-            </label><br /><label className="pt-10">
-              Documento de identidad:
-              <br />
-              <input
-                type="text"
-                className="    rounded-lg shadow-lg p-2"
-                required />
-            </label><br /><label>
-              Permiso de trabajo:
-              <br />
-              <input
-                type="text"
-                className="    rounded-lg shadow-lg p-2"
-                required />
-            </label><br /><label>
-              Disponibilidad inmediata?
-              <br />
-              <input
-                type="text"
-                className="    rounded-lg shadow-lg p-2"
-                required />
-            </label><br /><label>
-              Estudios:
-              <br />
-              <textarea
-                className="    rounded-lg shadow-lg p-2w-96 h-20"
-                required />
-            </label><br /><label>
-              Experiencia anterior:
-              <br />
-              <textarea
-                className="    rounded-lg shadow-lg p-2 w-96 h-20"
-                required />
-            </label><br /><button
-              type="submit"
-              className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Enviar solicitud
-            </button>
-          </form>
+            <form className="mt-6 ml-20" onSubmit={handleSubmit}>
+              <div className="mt-10">
+                <label>
+                  Nombre y apellidos:
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Nacionalidad:
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Sexo:
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Documento de identidad:
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Permiso de trabajo:
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Disponibilidad inmediata?
+                  <input
+                    type="text"
+                    className="rounded-lg shadow-lg p-2"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Estudios:
+                  <textarea
+                    className="rounded-lg shadow-lg p-2 w-96 h-20"
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mt-10">
+                <label>
+                  Experiencia anterior:
+                  <textarea
+                    className="rounded-lg shadow-lg p-2 w-96 h-20"
+                    required
+                  />
+                </label>
+              </div>
+              <button
+                type="submit"
+                className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Enviar solicitud
+              </button>
+            </form>
           </>
         )}
       </div>
