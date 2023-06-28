@@ -10,29 +10,13 @@ interface User {
 
 
 const Notificaciones = () => {
-  const [users, setUsers] = useState<User[]>([]);
-
-  const peticion = async () => {
-    // const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    const res = await fetch("http://localhost:5000/users/");
-    const jsonuserlist = await res.json();
-    setUsers(jsonuserlist);
-  };
-
-  useEffect(() => {
-    peticion();
-  }, []);
+ 
 
 
   return (
     <div className="mt-10 p-20 mx-10vw w-full">
       <h1 className="text-black text-3xl text-white">
-        Saludos, <span className="font-bold text-3xl text-white"> {users.map((user) => (
-          <div key={user._id}>
-
-            <p>{user.fullname}</p>
-          </div>
-        ))}</span>
+        Saludos, <span className="font-bold text-3xl text-white"> Usuario</span>
       </h1>
       <div className="flex justify-between mt-5">
       <h1 className="text-black text-3xl text-white">
