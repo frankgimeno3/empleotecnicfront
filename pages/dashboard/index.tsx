@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Notificaciones from "../components/Dashboard/Notificaciones";
-import BolsaDeEmpleo from "../components/Dashboard/BolsaDeEmpleo/BolsaDeEmpleo";
-import MisOfertas from "../components/Dashboard/MisOfertas/MisOfertas";
-import ProcesosActivos from "../components/Dashboard/ProcesosActivos/ProcesosActivos";
-import PublicarOferta from "../components/Dashboard/PublicarOferta";
+import Notificaciones from "../../components/Dashboard/Notificaciones";
+import BolsaDeEmpleo from "../../components/Dashboard/BolsaDeEmpleo/BolsaDeEmpleo";
+import MisOfertas from "../../components/Dashboard/MisOfertas/MisOfertas";
+import ProcesosActivos from "../../components/Dashboard/ProcesosActivos/ProcesosActivos";
+import PublicarOferta from "../../components/Dashboard/PublicarOferta";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -53,6 +53,7 @@ export default function Dashboard() {
     }
     router.push("/");
   };
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-10 bg-gray-500 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
