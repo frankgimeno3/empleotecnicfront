@@ -3,6 +3,7 @@ import Image from "next/image";
 import Notificaciones from "../../components/Dashboard/Notificaciones";
 import BolsaDeEmpleo from "../../components/Dashboard/BolsaDeEmpleo/BolsaDeEmpleo";
 import MisOfertas from "../../components/Dashboard/MisOfertas/MisOfertas";
+import MisSolicitudes from "../../components/Dashboard/MisSolicitudes/MisSolicitudes";
 import ProcesosActivos from "../../components/Dashboard/ProcesosActivos/ProcesosActivos";
 import PublicarOferta from "../../components/Dashboard/PublicarOferta";
 import Link from "next/link";
@@ -12,6 +13,7 @@ type ComponentName =
   | "Notificaciones"
   | "BolsaDeEmpleo"
   | "MisOfertas"
+  | "MisSolicitudes"
   | "PublicarOferta"
   | "ProcesosActivos";
 
@@ -90,6 +92,16 @@ export default function Dashboard() {
           </button>
           <button
             className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+              selectedButton === "MisSolicitudes"
+                ? "bg-white bg-opacity-100 text-cyan-950"
+                : ""
+            }`}
+            onClick={() => handleButtonClick("MisSolicitudes")}
+          >
+            Mis Solicitudes
+          </button>
+          <button
+            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
               selectedButton === "PublicarOferta"
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
@@ -122,6 +134,8 @@ export default function Dashboard() {
         {renderComponent("MisOfertas", <MisOfertas />)}
         {renderComponent("PublicarOferta", <PublicarOferta />)}
         {renderComponent("ProcesosActivos", <ProcesosActivos />)}
+        {renderComponent("MisSolicitudes", <MisSolicitudes />)}
+        
         <style jsx>{`
           .button-menu {
             width: 0%;
