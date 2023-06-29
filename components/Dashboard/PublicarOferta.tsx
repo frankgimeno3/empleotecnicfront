@@ -1,48 +1,12 @@
 import React, { Component, FormEvent } from "react";
 
-class PublicarOferta extends Component {
-  state = {
-    titulo: "",
-    empresa: "",
-    descripcion: "",
-    salario: "",
-    jornada: "",
-    diasLaborales: "",
-    ubicacion: "",
-    beneficios: "",
-    requisitos: "",
-  };
-
-  handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    // Aquí puedes manejar la lógica de envío del formulario
-    console.log(this.state);
-  };
-
-  handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-  };
-
-  render() {
-    const {
-      titulo,
-      empresa,
-      descripcion,
-      salario,
-      jornada,
-      diasLaborales,
-      ubicacion,
-      beneficios,
-      requisitos,
-    } = this.state;
-
+const PublicarOferta = () => {
+ 
     return (
-      <div className="container mx-auto mt-10 bg-gradient-to-r from-gray-700 to-cyan-950">
-        <div className="mt-6 mx-20 p-5 bg-gray-100">
-          <form onSubmit={this.handleSubmit} className="max-w-xl mx-auto">
+      <div className="mt-6  bg-gradient-to-r from-gray-700 to-cyan-950">
+        <div className=" mt-7 py-10 bg-gray-200 pt-1 ">
+        {/* <form onSubmit={handleSubmit} className="max-w-xl mx-auto"> */}
+        <form   className=" mx-20 px-20">
             <h1 className="font-bold text-3xl mb-5">Publicar Ofertas</h1>
             <div className="grid grid-cols-3 gap-10">
               <div>
@@ -54,8 +18,9 @@ class PublicarOferta extends Component {
                     type="text"
                     id="titulo"
                     name="titulo"
-                    value={titulo}
-                    onChange={this.handleChange}
+                    value="titulo"
+                    // value={titulo}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -69,8 +34,9 @@ class PublicarOferta extends Component {
                     type="text"
                     id="empresa"
                     name="empresa"
-                    value={empresa}
-                    onChange={this.handleChange}
+                    value="empresa"
+                    // value={empresa}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -83,8 +49,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="descripcion"
                     name="descripcion"
-                    value={descripcion}
-                    onChange={this.handleChange}
+                    value="descripcion"
+                    // value={descripcion}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -99,8 +66,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="salario"
                     name="salario"
-                    value={salario}
-                    onChange={this.handleChange}
+                    value="salario"
+                    // value={salario}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -113,8 +81,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="jornada"
                     name="jornada"
-                    value={jornada}
-                    onChange={this.handleChange}
+                    value="jornada"
+                    // value={jornada}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -127,8 +96,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="diaslaborales"
                     name="diaslaborales"
-                    value={diasLaborales}
-                    onChange={this.handleChange}
+                    value="diaslaborales"
+                    // value={diasLaborales}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -143,8 +113,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="ubicacion"
                     name="ubicacion"
-                    value={ubicacion}
-                    onChange={this.handleChange}
+                    value="ubicacion"
+                    // value={ubicacion}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -157,8 +128,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="beneficios"
                     name="beneficios"
-                    value={beneficios}
-                    onChange={this.handleChange}
+                    value="beneficios"
+                    // value={beneficios}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -171,8 +143,9 @@ class PublicarOferta extends Component {
                   <textarea
                     id="requisitos"
                     name="requisitos"
-                    value={requisitos}
-                    onChange={this.handleChange}
+                    value="requisitos"
+                    // value={requisitos}
+                    // onChange={handleChange}
                     className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500"
                     required
                   />
@@ -192,7 +165,8 @@ class PublicarOferta extends Component {
         </div>
       </div>
     );
-  }
+  
 }
+
 
 export default PublicarOferta;

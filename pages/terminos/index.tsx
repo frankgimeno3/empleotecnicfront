@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
-interface User {
+interface Oferta {
   _id: string;
-  email: string;
-  password: string;
-  fullname: string;
+  cuentaemisora: string,
+  contenido: string
 }
 
 export default function Terminos() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [ofertas, setOfertas] = useState<Oferta[]>([]);
 
   const peticion = async () => {
     // const res = await fetch("https://jsonplaceholder.typicode.com/users");
-    const res = await fetch("http://localhost:5000/users/");
-    const jsonuserlist = await res.json();
-    setUsers(jsonuserlist);
+    const res = await fetch("http://localhost:5000/ofertas/");
+    const jsonOfferList = await res.json();
+    setOfertas(jsonOfferList);
   };
 
   useEffect(() => {
@@ -24,11 +23,10 @@ export default function Terminos() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        {users.map((user) => (
-          <div key={user._id}>
-            <p>{user.email}</p>
-            <p>{user.password}</p>
-            <p>{user.fullname}</p>
+        {ofertas.map((oferta) => (
+          <div key={oferta._id}>
+            <p>{oferta.cuentaemisora}</p>
+            
           </div>
         ))}
       </div>
