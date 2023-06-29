@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
-interface User {
+interface Oferta {
   _id: string;
-  email: string;
-  password: string;
-  fullname: string;
+  cuentaemisora: string,
+  contenido: string
 }
 
 export default function Terminos() {
-  const [ofertas, setOfertas] = useState<User[]>([]);
+  const [ofertas, setOfertas] = useState<Oferta[]>([]);
 
   const peticion = async () => {
     // const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -26,9 +25,8 @@ export default function Terminos() {
       <div>
         {ofertas.map((oferta) => (
           <div key={oferta._id}>
-            <p>{oferta}</p>
-            <p>{user.password}</p>
-            <p>{user.fullname}</p>
+            <p>{oferta.cuentaemisora}</p>
+            
           </div>
         ))}
       </div>

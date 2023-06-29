@@ -1,6 +1,17 @@
-import React from "react";
+import React from 'react';
 
-const OfferCard = () => {
+interface Oferta {
+  _id: string;
+  cuentaemisora: string;
+  contenido: string;
+}
+
+interface OfferCardProps {
+  oferta: Oferta;
+}
+
+
+const OfferCard: React.FC<OfferCardProps> = ({ oferta }) => {
   return (
     <div className="flex justify-center items-center mb-10 pt-10 mx-20">
       <div className="bg-white rounded-lg shadow-lg p-6">
@@ -8,13 +19,10 @@ const OfferCard = () => {
           Operario de Fábrica - Extrusión de Aluminio Industrial
         </h2>
         <h3 className="text-lg text-gray-700 mb-4">
-          Empresa Inventada de Extrusión de Aluminio Industrial
+          {oferta.cuentaemisora}
         </h3>
         <p className="text-gray-600 mb-4">
-          Estamos buscando un operario de fábrica para unirse a nuestro equipo
-          de extrusión de aluminio industrial. Si tienes experiencia previa en
-          el manejo de maquinaria y estás buscando un trabajo dinámico y
-          desafiante, ¡te invitamos a aplicar!
+          {oferta.contenido}
         </p>
         <ul className="text-gray-700 mb-4">
           <li>Salario: $18 - $22 por hora</li>
