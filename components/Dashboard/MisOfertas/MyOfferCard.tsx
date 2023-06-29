@@ -29,7 +29,7 @@ const MyOfferCard = () => {
           </li>
         </ul>
         <div>
-        <p className="font-bold text-xl mb-1">
+        <p className="font-bold text-lg mb-1">
           Usuarios interesados
         </p>
         <ul className="text-gray-700 mb-8">
