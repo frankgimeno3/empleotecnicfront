@@ -8,14 +8,16 @@ const BolsaDeEmpleo = () => {
     <>
     <Navbar/>
     <div className="mt-5 pt-5  bg-gray-100">
-    <div className="pt-7 pb-3 px-20 bg-white  shadow">
-    <h1 className="text-cyan-950 px-10 ml-20 text-xl ">
+    <div className="pt-7  bg-white  shadow">
+    <h1 className="text-cyan-950 px-10 ml-20 text-lg ">
           Bolsa de empleo</h1>
         <QueYDonde />
         <FormularioBusquedaAvanzada />
       </div>
+      <div className="flex-column mt-2 shadow bg-white min-h-screen mx-20 ">
       <ListadoOfertasSolicitudes />
-    </div>
+      </div>
+      </div>
     </>
   );
 };

@@ -27,8 +27,8 @@ const QueYDonde: FC = () => {
   const sectorOptions: string[] = ['Vidrio', 'Ventanas', 'Protección solar'];
 
   return (
-    <div className="flex justify-center items-center my-5 text-xs">
-      <div className="flex space-x-4">
+    <div className="flex mx-10 px-9 items-center mt-1 mb-3 text-xs">
+      <div className="flex space-x-4 mx-10">
         <SelectComponent placeholder="Sector" options={sectorOptions} />
 
         <div className="rounded border border-gray-500  p-2">

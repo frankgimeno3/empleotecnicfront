@@ -13,18 +13,17 @@ interface OfferCardProps {
 
 const OfferCard: React.FC<OfferCardProps> = ({ oferta }) => {
   return (
-    <div className="flex justify-center items-center mb-10 pt-10 mx-20">
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <h2 className="text-xl font-semibold mb-2">
+    <div className="bg-white rounded-lg shadow-lg py-6 px-10">
+        <h2 className="text-md font-semibold mb-2">
           Operario de Fábrica - Extrusión de Aluminio Industrial
         </h2>
-        <h3 className="text-lg text-gray-700 mb-4">
+        <h3 className="text-sm text-gray-700 mb-4">
           {oferta.cuentaemisora}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-sm text-gray-600 mb-4">
           {oferta.contenido}
         </p>
-        <ul className="text-gray-700 mb-4">
+        <ul className="text-sm text-gray-700 mb-4">
           <li>Salario: $18 - $22 por hora</li>
           <li>Jornada: Tiempo completo</li>
           <li>Días laborales: De lunes a viernes</li>
@@ -40,12 +39,11 @@ const OfferCard: React.FC<OfferCardProps> = ({ oferta }) => {
         </ul>
         <a
           href="/dashboard/solicitud"
-          className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600"
+          className="text-sm bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600"
         >
           Aplicar ahora
         </a>
       </div>
-    </div>
   );
 };
 
