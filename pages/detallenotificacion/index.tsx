@@ -1,7 +1,9 @@
 // Detallenotificacion.js
-
+import Navbar from "../../components/Navbar/NavbarIn";
 const Detallenotificacion = () => {
     return (
+      <>
+      <Navbar/>
       <div className="bg-white p-20">
         <h2 className="text-black font-bold text-3xl mt-10">Detalles de la notificación</h2>
         <h3 className="text-black text-xl">Titular inventado</h3>
@@ -17,6 +19,7 @@ const Detallenotificacion = () => {
           auctor mauris turpis, a rhoncus ligula feugiat at.
         </p>
       </div>
+      </>
     );
   };
   
