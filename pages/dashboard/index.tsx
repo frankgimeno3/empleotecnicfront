@@ -1,12 +1,12 @@
-import Tarjetanotificacion from './Tarjetanotificacion';
+import Tarjetanotificacion from '../../components/Dashboard/Tarjetanotificacion';
 import React, { useEffect, useState } from 'react';
 
-interface User {
-  _id: string;
-  email: string;
-  password: string;
-  fullname: string;
-}
+// interface User {
+//   _id: string;
+//   email: string;
+//   password: string;
+//   fullname: string;
+// }
 
 
 const Notificaciones = () => {
