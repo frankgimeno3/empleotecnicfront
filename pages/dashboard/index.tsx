@@ -121,6 +121,16 @@ export default function Dashboard() {
             Procesos activos
           </button>
           <button
+            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+              selectedButton === "ProcesosActivos"
+                ? "bg-white bg-opacity-100 text-cyan-950"
+                : ""
+            }`}
+            onClick={() => router.push("/perfil")} // Modificar esta línea
+          >
+            Mi Perfil
+          </button>
+          <button
             onClick={handleLogout}
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
@@ -135,7 +145,7 @@ export default function Dashboard() {
         {renderComponent("PublicarOferta", <PublicarOferta />)}
         {renderComponent("ProcesosActivos", <ProcesosActivos />)}
         {renderComponent("MisSolicitudes", <MisSolicitudes />)}
-        
+
         <style jsx>{`
           .button-menu {
             width: 0%;
