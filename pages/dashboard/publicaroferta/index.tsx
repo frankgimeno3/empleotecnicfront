@@ -1,8 +1,11 @@
 import React, { Component, FormEvent } from "react";
+import Navbar from "../../../components/Navbar/NavbarIn";
 
 const PublicarOferta = () => {
  
     return (
+      <>
+      <Navbar/>
       <div className="mt-6  bg-gradient-to-r from-gray-700 to-cyan-950">
         <div className=" mt-7 py-10 bg-gray-200 pt-1 ">
         {/* <form onSubmit={handleSubmit} className="max-w-xl mx-auto"> */}
@@ -164,6 +167,7 @@ const PublicarOferta = () => {
           </form>
         </div>
       </div>
+      </>
     );
   
 }
