@@ -1,10 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 const NavbarIn: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState("Notificaciones");
   const router = useRouter();
+
+  useEffect(() => {
+    const currentPath = router.pathname;
+    if (currentPath === "/dashboard") {
+      setSelectedButton("Notificaciones");
+    } else if (currentPath === "/dashboard/bolsadeempleo") {
+      setSelectedButton("BolsaDeEmpleo");
+    } else if (currentPath === "/dashboard/misofertas") {
+      setSelectedButton("MisOfertas");
+    } else if (currentPath === "/dashboard/missolicitudes") {
+      setSelectedButton("MisSolicitudes");
+    } else if (currentPath === "/dashboard/publicaroferta") {
+      setSelectedButton("PublicarOferta");
+    } else if (currentPath === "/dashboard/procesosactivos") {
+      setSelectedButton("ProcesosActivos");
+    } else if (currentPath === "/perfil") {
+      setSelectedButton("MiPerfil");
+    } else if (currentPath === "/perfil2") {
+      setSelectedButton("MiPerfil2");
+    }
+  }, [router.pathname]);
 
   const handleLogout = async () => {
     try {
@@ -26,85 +46,79 @@ const NavbarIn: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-50 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
+      <button
+        className={`bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
+          selectedButton === "Notificaciones" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+        }`}
+        onClick={() => router.push("/dashboard")}
+      >
+        E
+      </button>
+      <div>
         <button
-          className={`bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "Notificaciones"
-              ? "bg-white bg-opacity-100 text-cyan-950"
-              : ""
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "BolsaDeEmpleo" ? "bg-white bg-opacity-30 text-cyan-950" : ""
           }`}
-          onClick={() => router.push("/dashboard")}
+          onClick={() => router.push("/dashboard/bolsadeempleo")}
         >
-          E
+          Bolsa de Empleo
         </button>
-        <div>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "BolsaDeEmpleo"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/dashboard/bolsadeempleo")}
-          >
-            Bolsa de Empleo
-          </button>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "MisOfertas"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/dashboard/misofertas")}
-          >
-            Mis Ofertas
-          </button>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "MisSolicitudes"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/dashboard/missolicitudes")}
-          >
-            Mis Solicitudes
-          </button>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "PublicarOferta"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/dashboard/publicaroferta")}
-          >
-            Publicar Oferta
-          </button>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "ProcesosActivos"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/dashboard/procesosactivos")}
-          >
-            Procesos activos
-          </button>
-          <button
-            className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-              selectedButton === "ProcesosActivos"
-                ? "bg-white bg-opacity-100 text-cyan-950"
-                : ""
-            }`}
-            onClick={() => router.push("/perfil")}
-          >
-            Mi Perfil
-          </button>
-          <button
-            onClick={handleLogout}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-          >
-            Cerrar sesión
-          </button>
-        </div>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "MisOfertas" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/dashboard/misofertas")}
+        >
+          Mis Ofertas
+        </button>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/dashboard/missolicitudes")}
+        >
+          Mis Solicitudes
+        </button>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "PublicarOferta" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/dashboard/publicaroferta")}
+        >
+          Publicar Oferta
+        </button>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/dashboard/procesosactivos")}
+        >
+          Procesos activos
+        </button>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "MiPerfil" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/perfil")}
+        >
+          Mi Perfil
+        </button>
+        <button
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "MiPerfil2" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          }`}
+          onClick={() => router.push("/perfil2")}
+        >
+          Mi Perfil2
+        </button>
+        <button
+          onClick={handleLogout}
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+        >
+          Cerrar sesión
+        </button>
+      </div>
     </nav>
   );
 };
