@@ -1,24 +1,26 @@
- 
-import OfertaSolicitada from '../../../components/Dashboard/MisSolicitudes/OfertaSolicitada'
+import OfertaSolicitada from "../../../components/Dashboard/MisSolicitudes/OfertaSolicitada";
 import Navbar from "../../../components/Navbar/NavbarIn";
 
 const MisSolicitudes = () => {
-    return (
-      <>
-      <Navbar/>
-      <div className='mt-6 mx-20 bg-gradient-to-r from-gray-700 to-cyan-950' >
-        < div className=" mt-7 py-10 bg-gray-200 pt-1">
-        <h1 className="text-3xl mt-10 ml-20 font-bold">Ofertas a las que has enviado solicitudes</h1>
-        <OfertaSolicitada />
-        <OfertaSolicitada />
-        <OfertaSolicitada />
-        <OfertaSolicitada />
-        <OfertaSolicitada />
-        <OfertaSolicitada />
+  return (
+    <>
+      <Navbar />
+      <div className="mt-5 pt-5  bg-gray-100">
+        <div className="pt-3  bg-white  shadow">
+          <h1 className="text-cyan-950 px-10 ml-20 text-lg py-3">
+            Ofertas a las que has mandado solicitudes
+          </h1>
         </div>
+
+        <OfertaSolicitada />
+        <OfertaSolicitada />
+        <OfertaSolicitada />
+        <OfertaSolicitada />
+        <OfertaSolicitada />
+        <OfertaSolicitada />
       </div>
-      </>
-    );
-  };
-  
-  export default MisSolicitudes;
+    </>
+  );
+};
+
+export default MisSolicitudes;
