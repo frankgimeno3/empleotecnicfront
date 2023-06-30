@@ -22,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     );
     const router = useRouter();
   
-    const renderComponent = (
+   const renderComponent = (
       buttonName: ComponentName,
       component: React.ReactNode
     ) => {
