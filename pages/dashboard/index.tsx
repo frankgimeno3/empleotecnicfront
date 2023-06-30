@@ -19,7 +19,7 @@ const Notificaciones = () => {
           </h1>
         </div>
 
-        <div className="flex-column mt-2 shadow bg-white mx-20 ">
+        <div className="flex-column mt-2 shadow bg-white min-h-screen mx-20 ">
           <div className="flex flex-row  py-3 justify-between">
               <h1 className="text-cyan-950 text-xl px-10 mt-1">Notificaciones</h1>
               <div className="flex-row px-10 mt-1">

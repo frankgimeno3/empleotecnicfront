@@ -14,7 +14,7 @@
 
     return (
       <div className=" mb-2 w-50vw bg-stone-100 block px-10 py-2.5 relative text-sm hover:bg-stone-200 ">
-        <Link href="/detallenotificacion">
+        <Link href="/detalle">
           <div className="flex justify-between">
             <h2 className="text-gray-600">La empresa VIDRIOPERFIL ha leído su solicitud</h2>
             <div
