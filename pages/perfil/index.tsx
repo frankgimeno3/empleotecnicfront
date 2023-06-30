@@ -1,5 +1,6 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
+import Navigation, { NavigationProps } from "../dashboard/Navigation";
 
 function ProfilePage() {
   const { data: session, status } = useSession();
@@ -7,6 +8,8 @@ function ProfilePage() {
   console.log(session, status);
 
   return (
+    <>
+    <Navigation/>
     <div className="h-[calc(100vh-4rem)] flex flex-col gap-y-10 items-center justify-center">
       <h1 className="font-bold text-3xl">Profile</h1>
 
@@ -30,6 +33,7 @@ function ProfilePage() {
         Signout
       </button>
     </div>
+    </>
   );
 }
 
