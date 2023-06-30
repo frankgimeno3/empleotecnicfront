@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import OfferCard2 from "../../components/Dashboard/BolsaDeEmpleo/Offercard2";
+import OfferCard2 from "../../../components/Dashboard/BolsaDeEmpleo/Offercard2";
 
 const Solicitud = () => {
   const [showForm, setShowForm] = useState(false);

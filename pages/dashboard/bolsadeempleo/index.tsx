@@ -1,6 +1,6 @@
-import QueYDonde from "./QueYDonde";
-import FormularioBusquedaAvanzada from "./FormularioBusquedaAvanzada";
-import ListadoOfertasSolicitudes from "./ListadoOfertasSolicitudes";
+import QueYDonde from "../../../components/Dashboard/BolsaDeEmpleo/QueYDonde";
+import FormularioBusquedaAvanzada from "../../../components/Dashboard/BolsaDeEmpleo//FormularioBusquedaAvanzada";
+import ListadoOfertasSolicitudes from "../../../components/Dashboard/BolsaDeEmpleo//ListadoOfertasSolicitudes";
 
 const BolsaDeEmpleo = () => {
   return (

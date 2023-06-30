@@ -1,5 +1,5 @@
  
-import MyOfferCard from './MyOfferCard'
+import MyOfferCard from '../../../components/Dashboard/MisOfertas/MyOfferCard'
 
 const MisOfertas = () => {
     return (
