@@ -3,7 +3,7 @@ const inter = Inter({ subsets: ['latin'] })
 import MainHeader from '../components/Home/MainHeader'
 import BolsasDeEmpleo from '../components/Home/BolsasDeEmpleo'
 import SobreNosotros from '../components/Home/SobreNosotros'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '../components/Navbar/NavbarOut'
 import Head from 'next/head'
 
 export default function Home() {
