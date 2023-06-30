@@ -1,6 +1,6 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
-import Navigation, { NavigationProps } from "../dashboard/Navigation";
+import Navigation, { NavigationProps } from "../../components/Navbar/NavbarIn";
 
 
 

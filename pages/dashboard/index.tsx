@@ -1,68 +1,45 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
-import Navigation, { NavigationProps } from "./Navigation";
-import Notificaciones from "../../components/Dashboard/Notificaciones";
-import BolsaDeEmpleo from "../../components/Dashboard/BolsaDeEmpleo/BolsaDeEmpleo";
-import MisOfertas from "../../components/Dashboard/MisOfertas/MisOfertas";
-import MisSolicitudes from "../../components/Dashboard/MisSolicitudes/MisSolicitudes";
-import ProcesosActivos from "../../components/Dashboard/ProcesosActivos/ProcesosActivos";
-import PublicarOferta from "../../components/Dashboard/PublicarOferta";
+import Tarjetanotificacion from './Tarjetanotificacion';
+import React, { useEffect, useState } from 'react';
 
-type ComponentName =
-  | "Notificaciones"
-  | "BolsaDeEmpleo"
-  | "MisOfertas"
-  | "MisSolicitudes"
-  | "PublicarOferta"
-  | "ProcesosActivos";
+interface User {
+  _id: string;
+  email: string;
+  password: string;
+  fullname: string;
+}
 
-export default function Dashboard() {
-  const [selectedButton, setSelectedButton] = useState<ComponentName>("Notificaciones");
-  const router = useRouter();
 
-  const handleButtonClick = (buttonName: ComponentName) => {
-    setSelectedButton(buttonName);
-  };
+const Notificaciones = () => {
+ 
 
-  const handleLogout = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/auth/logout", {
-        method: "POST",
-        credentials: "include",
-      });
-
-      if (res.status === 200) {
-        router.push("/login");
-      } else {
-        console.error("No se pudo cerrar sesión");
-      }
-    } catch (error) {
-      console.error("Error al cerrar sesión", error);
-    }
-    router.push("/");
-  };
 
   return (
-    <>
-      <Navigation
-        selectedButton={selectedButton}
-        onButtonClick={handleButtonClick}
-        onLogout={handleLogout}
-      />
-      <div className="pt-3 flex flex-col items-center  font-mono text-sm bg-gradient-to-r from-gray-700 to-cyan-950">
-        {selectedButton === "Notificaciones" && <Notificaciones />}
-        {selectedButton === "BolsaDeEmpleo" && <BolsaDeEmpleo />}
-        {selectedButton === "MisOfertas" && <MisOfertas />}
-        {selectedButton === "PublicarOferta" && <PublicarOferta />}
-        {selectedButton === "ProcesosActivos" && <ProcesosActivos />}
-        {selectedButton === "MisSolicitudes" && <MisSolicitudes />}
-
-        <style jsx>{`
-          .button-menu {
-            width: 0%;
-          }
-        `}</style>
+    <div className="mt-10 p-20 mx-10vw w-full"> 
+      <h1 className="text-black text-3xl text-white">
+        Saludos, <span className="font-bold text-3xl text-white"> Usuario</span>
+      </h1>
+      <div className="flex justify-between mt-5">
+      <h1 className="text-black text-3xl text-white">
+        Notificaciones
+      </h1>        <div>
+          {[...Array(5)].map((_, index) => (
+            <button
+              key={index}
+              className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mr-2"
+            >
+              {index + 1}
+            </button>
+          ))}
+          <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            ... Ir al final
+          </button>
+        </div>
       </div>
-    </>
+      {[...Array(5)].map((_, index) => (
+        <Tarjetanotificacion key={index} />
+      ))}
+    </div>
   );
-}
+};
+
+export default Notificaciones;

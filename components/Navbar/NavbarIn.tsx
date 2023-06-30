@@ -2,41 +2,19 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-type ComponentName =
-  | "Notificaciones"
-  | "BolsaDeEmpleo"
-  | "MisOfertas"
-  | "MisSolicitudes"
-  | "PublicarOferta"
-  | "ProcesosActivos";
+interface NavbarInProps {
+  handleLogout: () => void; // Prop para la función handleLogout
+}
 
-  export interface NavigationProps {
-    selectedButton: ComponentName;
-    onButtonClick: (buttonName: ComponentName) => void;
-    onLogout: () => Promise<void>;
-  }
-
-const Navigation: React.FC<NavigationProps> = (props) => {
-    const [selectedButton, setSelectedButton] = useState<ComponentName>(
+const NavbarIn: React.FC<NavbarInProps> = ({ handleLogout }) => {
+  const [selectedButton, setSelectedButton] = useState(
       "Notificaciones"
     );
     const router = useRouter();
   
-   const renderComponent = (
-      buttonName: ComponentName,
-      component: React.ReactNode
-    ) => {
-      if (selectedButton === buttonName) {
-        return component;
-      }
-      return null;
-    };
+
   
-    const handleButtonClick = (buttonName: ComponentName) => {
-      setSelectedButton(buttonName);
-    };
-  
-    const handleLogout = async () => {
+    const handleLogoutClick = async () => {
       try {
         const res = await fetch("http://localhost:5000/auth/logout", {
           method: "POST",
@@ -45,6 +23,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   
         if (res.status === 200) {
           // Se ha cerrado sesión con éxito
+          handleLogout(); 
           router.push("/login"); // Redirige al usuario a la página de inicio de sesión
         } else {
           // Manejar el caso de error si no se pudo cerrar sesión
@@ -65,7 +44,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("Notificaciones")}
+            onClick={() => router.push("/dashboard")}
           >
             Notificaciones
           </button>
@@ -75,7 +54,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("BolsaDeEmpleo")}
+            onClick={() => router.push("/dashboard/bolsadeempleo")}
           >
             Bolsa de Empleo
           </button>
@@ -85,7 +64,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("MisOfertas")}
+            onClick={() => router.push("/dashboard/misofertas")}
           >
             Mis Ofertas
           </button>
@@ -95,7 +74,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("MisSolicitudes")}
+            onClick={() => router.push("/dashboard/missolicitudes")}
           >
             Mis Solicitudes
           </button>
@@ -105,7 +84,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("PublicarOferta")}
+            onClick={() => router.push("/dashboard/publicaroferta")}
           >
             Publicar Oferta
           </button>
@@ -115,7 +94,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
                 ? "bg-white bg-opacity-100 text-cyan-950"
                 : ""
             }`}
-            onClick={() => handleButtonClick("ProcesosActivos")}
+            onClick={() => router.push("/dashboard/procesosactivos")}
           >
             Procesos activos
           </button>
@@ -130,7 +109,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
             Mi Perfil
           </button>
           <button
-            onClick={handleLogout}
+            onClick={handleLogoutClick}
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
             Cerrar sesión
@@ -140,4 +119,4 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     );
   };
   
-  export default Navigation;
+  export default NavbarIn;

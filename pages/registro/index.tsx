@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Inter } from "next/font/google";
-import Navbar from '../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/NavbarOut'
 
 const inter = Inter({ subsets: ["latin"] });
 
