@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const isLoggedIn = true; // Cambia este valor según tu lógica de autenticación
 
   return (
     <>
@@ -13,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icons/minimal.png" />
       </Head>
 
-      <Layout isLoggedIn={isLoggedIn}>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </>

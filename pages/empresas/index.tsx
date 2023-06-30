@@ -1,5 +1,6 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
+import Navbar from "../../components/Navbar/NavbarIn";
 
 function PerfilEmpresa() {
   const { data: session, status } = useSession();
@@ -7,6 +8,8 @@ function PerfilEmpresa() {
   console.log(session, status);
 
   return (
+    <>
+    <Navbar/>
     <div className="h-[calc(100vh-4rem)] flex flex-col gap-y-10 items-center justify-center">
       <h1 className="font-bold text-3xl">Profile</h1>
 
@@ -30,6 +33,7 @@ function PerfilEmpresa() {
         Signout
       </button>
     </div>
+    </>
   );
 }
 

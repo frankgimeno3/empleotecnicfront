@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar/NavbarOut";
 
@@ -35,6 +34,9 @@ const IniciarSesion = () => {
       // Maneja el error de conexión o cualquier otro error
     }
   };
+
+  useEffect(() => {
+  }, []);
 
   return (
     <div className="relative w-full h-screen">

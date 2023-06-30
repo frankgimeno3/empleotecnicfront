@@ -1,7 +1,10 @@
-import TarjetaCandidato from "./TarjetaCandidato";
+import TarjetaCandidato from "../../../components/Dashboard/ProcesosActivos/TarjetaCandidato";
+import Navbar from "../../../components/Navbar/NavbarIn";
 
 const ProcesosActivos = () => {
   return (
+    <>
+    <Navbar/>
     <div className="mt-6 mx-10vw w-full bg-gradient-to-r from-gray-700 to-cyan-950">
       <div className="mt-10 mx-20 p-20 bg-gray-200 ">
         <h1 className="text-black text-3xl">
@@ -35,6 +38,7 @@ const ProcesosActivos = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
