@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
 
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-gray-500 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
       <Link href="/" passHref>
         <div className="bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer">
           E
