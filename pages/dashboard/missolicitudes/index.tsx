@@ -1,5 +1,5 @@
  
-import OfertaSolicitada from './OfertaSolicitada'
+import OfertaSolicitada from '../../../components/Dashboard/MisSolicitudes/OfertaSolicitada'
 
 const MisSolicitudes = () => {
     return (
