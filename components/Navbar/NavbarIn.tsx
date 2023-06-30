@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-interface NavbarInProps {
-  handleLogout: () => void; // Prop para la función handleLogout
-}
 
-const NavbarIn: React.FC<NavbarInProps> = ({ handleLogout }) => {
+
+const NavbarIn: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState(
       "Notificaciones"
     );
@@ -14,16 +12,14 @@ const NavbarIn: React.FC<NavbarInProps> = ({ handleLogout }) => {
   
 
   
-    const handleLogoutClick = async () => {
+    const handleLogout = async () => {
       try {
         const res = await fetch("http://localhost:5000/auth/logout", {
           method: "POST",
           credentials: "include", // Para enviar las cookies al servidor
         });
-  
         if (res.status === 200) {
           // Se ha cerrado sesión con éxito
-          handleLogout(); 
           router.push("/login"); // Redirige al usuario a la página de inicio de sesión
         } else {
           // Manejar el caso de error si no se pudo cerrar sesión
@@ -109,7 +105,7 @@ const NavbarIn: React.FC<NavbarInProps> = ({ handleLogout }) => {
             Mi Perfil
           </button>
           <button
-            onClick={handleLogoutClick}
+            onClick={handleLogout}
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
           >
             Cerrar sesión

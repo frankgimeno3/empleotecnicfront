@@ -1,6 +1,6 @@
 import Tarjetanotificacion from '../../components/Dashboard/Tarjetanotificacion';
 import React, { useEffect, useState } from 'react';
-
+import Navbar from '../../components/Navbar/NavbarIn';
 // interface User {
 //   _id: string;
 //   email: string;
@@ -14,6 +14,8 @@ const Notificaciones = () => {
 
 
   return (
+    <>
+    <Navbar/>
     <div className="mt-10 p-20 mx-10vw w-full"> 
       <h1 className="text-black text-3xl text-white">
         Saludos, <span className="font-bold text-3xl text-white"> Usuario</span>
@@ -39,6 +41,7 @@ const Notificaciones = () => {
         <Tarjetanotificacion key={index} />
       ))}
     </div>
+    </>
   );
 };
 

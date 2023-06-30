@@ -2,24 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Navbar: React.FC = () => {
-  const isLoggedIn = false; // Cambia esta variable a `true` si la sesión está iniciada
 
-  if (isLoggedIn) {
-    return (
-      <nav className="fixed top-0 left-0 right-0 z-10 bg-gray-500 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
-        <Link href="/" passHref>
-          <div className="bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer">
-            E
-          </div>
-        </Link>
-        <Link href="/logout" passHref>
-          <div className="bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer">
-            Cerrar Sesión
-          </div>
-        </Link>
-      </nav>
-    );
-  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-gray-500 bg-opacity-25 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
