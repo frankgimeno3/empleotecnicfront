@@ -9,7 +9,7 @@ const NavbarIn: React.FC = () => {
     const currentPath = router.pathname;
     if (currentPath === "/dashboard") {
       setSelectedButton("Notificaciones");
-    } else if (currentPath === "/dashboard/bolsadeempleo") {
+    } else if (currentPath === "/dashboard/bolsadeempleo" || currentPath === "/dashboard/solicitud" ) {
       setSelectedButton("BolsaDeEmpleo");
     } else if (currentPath === "/dashboard/misofertas") {
       setSelectedButton("MisOfertas");
@@ -49,7 +49,7 @@ const NavbarIn: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-50 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
       <button
         className={`bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
-          selectedButton === "Notificaciones" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+          selectedButton === "Notificaciones" ? "bg-white bg-opacity-50 text-cyan-950" : ""
         }`}
         onClick={() => router.push("/dashboard")}
       >
@@ -58,7 +58,7 @@ const NavbarIn: React.FC = () => {
       <div>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "BolsaDeEmpleo" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "BolsaDeEmpleo" ? "bg-white text-cyan-950 bg-opacity-50" : ""
           }`}
           onClick={() => router.push("/dashboard/bolsadeempleo")}
         >
@@ -66,7 +66,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MisOfertas" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "MisOfertas" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
           onClick={() => router.push("/dashboard/misofertas")}
         >
@@ -74,7 +74,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
           onClick={() => router.push("/dashboard/missolicitudes")}
         >
@@ -82,7 +82,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "PublicarOferta" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "PublicarOferta" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
           onClick={() => router.push("/dashboard/publicaroferta")}
         >
@@ -90,7 +90,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
           onClick={() => router.push("/dashboard/procesosactivos")}
         >
@@ -98,7 +98,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MiPerfil" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "MiPerfil" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
           onClick={() => router.push("/perfil")}
         >
@@ -106,7 +106,7 @@ const NavbarIn: React.FC = () => {
         </button>
         <button
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MiPerfil2" ? "bg-white bg-opacity-30 text-cyan-950" : ""
+            selectedButton === "MiPerfil2" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
           onClick={() => router.push("/perfil2")}
         >
