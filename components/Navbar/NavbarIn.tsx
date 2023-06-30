@@ -46,9 +46,9 @@ const NavbarIn: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-50 backdrop-filter backdrop-blur-lg flex items-center justify-between p-4 md:text-xs xl:text-base">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-50 backdrop-filter backdrop-blur-lg flex items-center justify-between px-4 py-2 md:text-xs xl:text-base">
       <button
-        className={`bg-opacity-25 text-white rounded-full py-2 px-4 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
+        className={`bg-opacity-25 text-white rounded-full py-2 px-3 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
           selectedButton === "Notificaciones" ? "bg-white bg-opacity-50 text-cyan-950" : ""
         }`}
         onClick={() => router.push("/dashboard")}
@@ -56,7 +56,7 @@ const NavbarIn: React.FC = () => {
         E
       </button>
       <div>
-        <button
+        <button  style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "BolsaDeEmpleo" ? "bg-white text-cyan-950 bg-opacity-50" : ""
           }`}
@@ -64,7 +64,7 @@ const NavbarIn: React.FC = () => {
         >
           Bolsa de Empleo
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MisOfertas" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
@@ -72,7 +72,7 @@ const NavbarIn: React.FC = () => {
         >
           Mis Ofertas
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
@@ -80,7 +80,7 @@ const NavbarIn: React.FC = () => {
         >
           Mis Solicitudes
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "PublicarOferta" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -88,7 +88,7 @@ const NavbarIn: React.FC = () => {
         >
           Publicar Oferta
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -96,7 +96,7 @@ const NavbarIn: React.FC = () => {
         >
           Procesos activos
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MiPerfil" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -104,7 +104,7 @@ const NavbarIn: React.FC = () => {
         >
           Mi Perfil
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MiPerfil2" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -112,7 +112,7 @@ const NavbarIn: React.FC = () => {
         >
           Mi Perfil2
         </button>
-        <button
+        <button style={{fontSize:'0.70rem'}}
           onClick={handleLogout}
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
         >
