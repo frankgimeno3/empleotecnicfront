@@ -7,7 +7,7 @@ interface SelectComponentProps {
 
 const SelectComponent: FC<SelectComponentProps> = ({ placeholder, options }) => {
   return (
-    <div className=" mx-1">
+    <div className=" mx-1 text-xs">
       <select className="w-64 bg-white text-gray-500 p-2 rounded border border-gray-500" defaultValue="" required>
         <option value="" disabled hidden>
           {placeholder}
@@ -50,12 +50,10 @@ const FormularioBusquedaAvanzada: FC = () => {
     'internacional'
   ];
 
-  const sectorOptions: string[] = ['Vidrio', 'Ventanas', 'Protección solar'];
 
   return (
     <div className="flex justify-center items-center mt-10 mx-10 mb-0">
       <div className="flex flex-wrap justify-center align-start mb-0">
-        <SelectComponent placeholder="Sector" options={sectorOptions} />
         <SelectComponent placeholder="Tipo de empleo" options={tipoEmpleoOptions} />
         <SelectComponent placeholder="Turno y Horario" options={turnoHorarioOptions} />
         <SelectComponent placeholder="Distancia máxima" options={distanciaMaximaOptions} />
