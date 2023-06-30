@@ -1,4 +1,4 @@
-import TarjetaCandidato from "./TarjetaCandidato";
+import TarjetaCandidato from "../../../components/Dashboard/ProcesosActivos/TarjetaCandidato";
 
 const ProcesosActivos = () => {
   return (
