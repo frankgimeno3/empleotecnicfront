@@ -1,24 +1,21 @@
- 
-import MyOfferCard from '../../../components/Dashboard/MisOfertas/MyOfferCard'
+import MyOfferCard from "../../../components/Dashboard/MisOfertas/MyOfferCard";
 import Navbar from "../../../components/Navbar/NavbarIn";
 
 const MisOfertas = () => {
-    return (
-      <>
-      <Navbar/>
-      <div className='mt-6 mx-20 bg-gradient-to-r from-gray-700 to-cyan-950' >
-        < div className=" mt-7 py-10 bg-gray-200 pt-1">
-        <h1 className="text-3xl mt-10 ml-20 font-bold">Ofertas publicadas</h1>
-        <MyOfferCard />
-        <MyOfferCard />
-        <MyOfferCard />
-        <MyOfferCard />
-        <MyOfferCard />
-        <MyOfferCard />
+  return (
+    <>
+      <Navbar />
+      <div className="mt-5 pt-5  bg-gray-100">
+        <div className="pt-3  bg-white  shadow">
+          <h1 className="text-cyan-950 px-10 ml-20 text-lg py-3 pb-3.5">
+            Ofertas publicadas
+          </h1>
         </div>
+
+        
       </div>
-      </>
-    );
-  };
-  
-  export default MisOfertas;
+    </>
+  );
+};
+
+export default MisOfertas;

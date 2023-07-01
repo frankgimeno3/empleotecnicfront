@@ -21,8 +21,8 @@ const ListadoOfertasSolicitudes: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-10vw w-full pt-0 mt-0">
-      {ofertas.map((oferta) => (
+    <div className="flex-column ">
+    {ofertas.map((oferta) => (
         <OfferCard key={oferta._id} oferta={oferta} />
       ))}
     </div>

@@ -6,11 +6,12 @@ const PublicarOferta = () => {
     return (
       <>
       <Navbar/>
-      <div className="mt-6  bg-gradient-to-r from-gray-700 to-cyan-950">
-        <div className=" mt-7 py-10 bg-gray-200 pt-1 ">
-        {/* <form onSubmit={handleSubmit} className="max-w-xl mx-auto"> */}
-        <form   className=" mx-20 px-20">
-            <h1 className="font-bold text-3xl mb-5">Publicar Ofertas</h1>
+      <div className="mt-5 pt-5  bg-gray-100">
+    <div className="pt-3  bg-white  shadow">
+    <h1 className="text-cyan-950 px-10 ml-20 text-lg py-3">
+          Publicar Oferta</h1>
+          </div>
+        <form   className=" mx-20 px-20 bg-white mt-2 py-10">
             <div className="grid grid-cols-3 gap-10">
               <div>
                 <div className="mb-4">
@@ -166,8 +167,7 @@ const PublicarOferta = () => {
             </div>
           </form>
         </div>
-      </div>
-      </>
+       </>
     );
   
 }
