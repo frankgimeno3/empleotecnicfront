@@ -11,7 +11,7 @@ const MisOfertas = () => {
             Ofertas publicadas
           </h1>
         </div>
-
+<MyOfferCard/>
         
       </div>
     </>
