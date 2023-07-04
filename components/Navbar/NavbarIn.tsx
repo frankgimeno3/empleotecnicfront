@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Cookies from 'js-cookie';
 
 const NavbarIn: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState("Notificaciones");
@@ -27,6 +28,7 @@ const NavbarIn: React.FC = () => {
   }, [router.pathname]);
 
   const handleLogout = async () => {
+    Cookies.remove('authvalue');
     try {
       const res = await fetch("http://localhost:5000/auth/logout", {
         method: "POST",
