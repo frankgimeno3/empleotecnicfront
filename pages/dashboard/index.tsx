@@ -12,7 +12,7 @@ const Notificaciones = () => {
   const [cookieValue, setCookieValue] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    const value = Cookies.get('userEmail');
+    const value = Cookies.get('authvalue');
     if (value) {
       setCookieValue(value);
     }

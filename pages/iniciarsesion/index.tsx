@@ -30,7 +30,7 @@ const IniciarSesion = () => {
         // console.log("Token:", accessToken);
         console.log(response.authToken);
   
-        Cookies.set('userEmail', email); // Crear cookie con el valor del email
+        Cookies.set('authvalue', response.authToken); // Crear cookie con el valor del email
         router.push("/dashboard");
       })
       .catch(error => {
