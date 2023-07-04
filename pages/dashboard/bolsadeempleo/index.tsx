@@ -14,8 +14,10 @@ const BolsaDeEmpleo = () => {
         <QueYDonde />
         <FormularioBusquedaAvanzada />
       </div>
-      <div className="flex-column mt-2 shadow bg-white min-h-screen mx-20 ">
-      <ListadoOfertasSolicitudes />
+      <div className=" mt-2  mx-10 mr-20">
+        <div className="flex-column shadow bg-gray-50 min-h-screen mx-20 px-10">
+        <ListadoOfertasSolicitudes />
+        </div>
       </div>
       </div>
     </>
