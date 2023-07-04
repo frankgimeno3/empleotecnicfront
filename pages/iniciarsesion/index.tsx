@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar/NavbarOut";
+import { AuthContext } from "../../context/authContext";
+import Cookies from 'js-cookie';
 
 const IniciarSesion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,16 +24,18 @@ const IniciarSesion = () => {
 
       if (response.ok) {
         const { accessToken } = await response.json();
-        // Realiza alguna acción con el token de acceso
-
-        // Redirige al usuario a "/dashboard" solo si response.ok es true
+              // NI LA LÍNEA DE ARRIBA NI LAS DOS DE ABAJO FUNCIONAN.
+        // storeToken(accessToken);
+        // authenticateUser();
+        
+        Cookies.set('userEmail', email); // Crear cookie con el valor del email
         router.push("/dashboard");
       } else {
         const { message } = await response.json();
         setErrorMessage("Credenciales incorrectas");
       }
     } catch (error) {
-      console.error(error);
+      console.error("HA OCURRIDO ESTO", error);
       // Maneja el error de conexión o cualquier otro error
     }
   };
