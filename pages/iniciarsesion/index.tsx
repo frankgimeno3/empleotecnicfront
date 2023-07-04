@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar/NavbarOut";
+import Cookies from 'js-cookie';
 
 const IniciarSesion = () => {
   const [email, setEmail] = useState("");
@@ -8,35 +9,35 @@ const IniciarSesion = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        const { accessToken } = await response.json();
-        // Realiza alguna acción con el token de acceso
-
-        // Redirige al usuario a "/dashboard" solo si response.ok es true
+    fetch("http://localhost:5000/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Credenciales incorrectas");
+        }
+      })
+      .then(response => {
+        // const { accessToken } = response
+        // console.log("Token:", accessToken);
+        console.log(response.authToken);
+  
+        Cookies.set('userEmail', email); // Crear cookie con el valor del email
         router.push("/dashboard");
-      } else {
-        const { message } = await response.json();
-        setErrorMessage("Credenciales incorrectas");
-      }
-    } catch (error) {
-      console.error(error);
-      // Maneja el error de conexión o cualquier otro error
-    }
+      })
+      .catch(error => {
+        console.error("Ha ocurrido un error:", error);
+        // Maneja el error de conexión o cualquier otro error
+      });
   };
-
-  useEffect(() => {
-  }, []);
 
   return (
     <div className="relative w-full h-screen">

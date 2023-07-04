@@ -1,21 +1,31 @@
 import Tarjetanotificacion from "../../components/Dashboard/Tarjetanotificacion";
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/NavbarIn";
-// interface User {
-//   _id: string;
+import Cookies from 'js-cookie';
+
+// interface Payload {
 //   email: string;
-//   password: string;
-//   fullname: string;
 // }
 
+
 const Notificaciones = () => {
+  const [cookieValue, setCookieValue] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const value = Cookies.get('userEmail');
+    if (value) {
+      setCookieValue(value);
+    }
+  }, []);
+
+ 
   return (
     <>
       <Navbar />
       <div className="mt-5 pt-5  bg-gray-100">
         <div className="pt-7 pb-3 px-20 bg-white  shadow">
           <h1 className="text-cyan-950 px-10 text-xl ">
-            Saludos, <span className="font-bold "> Usuario</span>
+            Saludos, <span className="font-bold">{cookieValue}</span>
           </h1>
         </div>
 
@@ -48,4 +58,3 @@ const Notificaciones = () => {
 };
 
 export default Notificaciones;
-
