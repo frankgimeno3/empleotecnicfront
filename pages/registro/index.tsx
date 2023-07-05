@@ -17,8 +17,9 @@ export default function Registro() {
         loop
         muted
       ></video>
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-        <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-50vw  pt-10 pb-10 mt-20">
+      <div className="mx-20 px-20">
+      <div className=" flex flex-col justify-center items-center text-center mx-20">
+        <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-50vw  pt-10 pb-9 mt-10 mx-20">
           <div className="flex flex-col items-center  py-20 mx-10">
             <h1 className="text-4xl text-white pb-10">Crear cuenta</h1>
 
@@ -47,6 +48,7 @@ export default function Registro() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
