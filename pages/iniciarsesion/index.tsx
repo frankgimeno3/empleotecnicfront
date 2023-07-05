@@ -11,6 +11,10 @@ const IniciarSesion = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 1);
+    const cookieOptions = {expires: expirationDate, secure: true
+    };
     fetch("http://localhost:5000/auth/login", {
       method: "POST",
       headers: {
@@ -30,7 +34,7 @@ const IniciarSesion = () => {
         // console.log("Token:", accessToken);
         console.log(response.authToken);
   
-        Cookies.set('authvalue', response.authToken); // Crear cookie con el valor del email
+        Cookies.set('authvalue', response.authToken, cookieOptions); // Crear cookie con el valor del email
         router.push("/dashboard");
       })
       .catch(error => {
