@@ -12,6 +12,8 @@ const NavbarIn: React.FC = () => {
       setSelectedButton("Notificaciones");
     } else if (currentPath === "/dashboard/bolsadeempleo" || currentPath === "/dashboard/solicitud" ) {
       setSelectedButton("BolsaDeEmpleo");
+    } else if (currentPath === "/dashboard/bolsatrabajadores" || currentPath === "/dashboard/bolsatrabajadores" ) {
+      setSelectedButton("Bolsatrabajadores");
     } else if (currentPath === "/dashboard/misofertas") {
       setSelectedButton("MisOfertas");
     } else if (currentPath === "/dashboard/missolicitudes") {
@@ -58,7 +60,7 @@ const NavbarIn: React.FC = () => {
         E
       </button>
       <div>
-        <button  style={{fontSize:'0.70rem'}}
+      <button  style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "BolsaDeEmpleo" ? "bg-white text-cyan-950 bg-opacity-50" : ""
           }`}
@@ -66,7 +68,15 @@ const NavbarIn: React.FC = () => {
         >
           Bolsa de Empleo
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button  style={{fontSize:'0.60rem'}}
+          className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
+            selectedButton === "Bolsatrabajadores" ? "bg-white text-cyan-950 bg-opacity-50" : ""
+          }`}
+          onClick={() => router.push("/dashboard/bolsatrabajadores")}
+        >
+          Bolsa de Trabajadores
+        </button>
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MisOfertas" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
@@ -74,7 +84,7 @@ const NavbarIn: React.FC = () => {
         >
           Mis Ofertas
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
           }`}
@@ -82,7 +92,7 @@ const NavbarIn: React.FC = () => {
         >
           Mis Solicitudes
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "PublicarOferta" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -90,7 +100,7 @@ const NavbarIn: React.FC = () => {
         >
           Publicar Oferta
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -98,7 +108,7 @@ const NavbarIn: React.FC = () => {
         >
           Procesos activos
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MiPerfil" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -106,7 +116,7 @@ const NavbarIn: React.FC = () => {
         >
           Mi Perfil
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
             selectedButton === "MiPerfil2" ? "bg-white bg-opacity-50 text-cyan-950" : ""
           }`}
@@ -114,7 +124,7 @@ const NavbarIn: React.FC = () => {
         >
           Mi Perfil2
         </button>
-        <button style={{fontSize:'0.70rem'}}
+        <button style={{fontSize:'0.60rem'}}
           onClick={handleLogout}
           className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
         >
