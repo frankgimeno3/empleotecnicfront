@@ -18,7 +18,7 @@ export default function Registro() {
     expirationDate.setDate(expirationDate.getDate() + 1);
     const cookieOptions = {expires: expirationDate, secure: true
     };
-    fetch("http://localhost:5000/auth/login", {
+    fetch("http://localhost:5000/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export default function Registro() {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Credenciales incorrectas");
+          throw new Error("Ha habido un error con la autenticación");
         }
       })
       .then(response => {
@@ -60,7 +60,7 @@ export default function Registro() {
       <div className="mx-20 px-20">
       <div className=" flex flex-col justify-center items-center text-center mx-20">
         <div className="bg-gray-800 bg-opacity-60 backdrop-filter backdrop-blur-lg w-50vw  pt-10 pb-9 mt-10 mx-20">
-          <div className="flex flex-col items-center  py-20 mx-10 text-white">
+          <div className="flex flex-col items-center  pt-8 pb-11 mt-20 mx-10 text-white">
             <h1 className="text-4xl  text-white  pb-3">Crear cuenta</h1>
 
             <form action="/signup" method="POST">
