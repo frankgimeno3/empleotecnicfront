@@ -2,6 +2,7 @@ import Tarjetanotificacion from "../../components/Dashboard/Tarjetanotificacion"
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/NavbarIn";
 import Cookies from 'js-cookie';
+import jwt_decode from 'jwt-decode';
 
 // interface Payload {
 //   email: string;
@@ -9,23 +10,37 @@ import Cookies from 'js-cookie';
 
 
 const Notificaciones = () => {
-  const [cookieValue, setCookieValue] = useState<string | undefined>(undefined);
-
+  const [cookieValue, setCookieValue] = useState<{
+    authValue: string | undefined;
+    iat: number;
+    exp: number;
+  }>({
+    authValue: undefined,
+    iat: 0,
+    exp: 0,
+  });
+  
   useEffect(() => {
     const value = Cookies.get('authvalue');
     if (value) {
-      setCookieValue(value);
+      const decodedValue = jwt_decode(value) as {
+        authValue: string | undefined;
+        iat: number;
+        exp: number;
+      };
+      setCookieValue(decodedValue);
     }
   }, []);
 
- 
+  
+
   return (
     <>
       <Navbar />
       <div className="mt-5 pt-5  bg-gray-100">
         <div className="pt-7 pb-3 px-20 bg-white  shadow">
           <h1 className="text-cyan-950 px-10 text-xl ">
-            Saludos, <span className="font-bold">{cookieValue}</span>
+            Saludos, <span className="font-bold">{cookieValue.authValue}</span>
           </h1>
         </div>
 

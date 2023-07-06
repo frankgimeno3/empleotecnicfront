@@ -1,5 +1,4 @@
 "use client";
-import { useSession, signOut } from "next-auth/react";
 import Navbar from "../../components/Navbar/NavbarIn";
 
 
@@ -7,10 +6,8 @@ import Navbar from "../../components/Navbar/NavbarIn";
  
 
 function ProfilePage2() {
-  const { data: session, status } = useSession();
 
-  console.log(session, status);
-
+ 
   return (
     <>
       <Navbar/>
@@ -19,20 +16,13 @@ function ProfilePage2() {
 
       <pre className="bg-zinc-800 p-4">
         {JSON.stringify(
-          {
-            session,
-            status,
-          },
-          null,
-          2
+           
+          null
         )}
       </pre>
 
       <button
         className="bg-zinc-800 px-4 py-2 block mb-2"
-        onClick={() => {
-          signOut();
-        }}
       >
         Signout
       </button>
