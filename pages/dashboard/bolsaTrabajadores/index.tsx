@@ -18,18 +18,28 @@ const Bolsatrabajadores = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-20">
-        <button onClick={handleBolsaTrabajadoresClick}>
-          Bolsa de trabajadores
-        </button>
-        <button onClick={handleOfertasEmpresasClick}>
-          Ofertas de otras empresas
-        </button>
+      <div className="mt-10 py-7 bg-white shadow">
+        <h1 className="text-cyan-950 px-10 ml-20 text-lg ">
+          Bolsa de Trabajadores
+        </h1>
+        <div className="ml-20">
+          <button
+            className=" ml-10 bg-gray-800 text-white px-4 py-2 rounded text-xs"
+            onClick={handleBolsaTrabajadoresClick}
+          >
+            Bolsa de trabajadores
+          </button>
+          <button
+            className="  ml-5 bg-gray-800 text-white px-4 py-2 rounded text-xs"
+            onClick={handleOfertasEmpresasClick}
+          >
+            Ofertas de otras empresas
+          </button>
+        </div>
       </div>
       <div className="mt-5 pt-5 bg-gray-100">
-        
         <div className="mt-2 mx-10 mr-20">
-          <div className="flex-column shadow bg-gray-50 min-h-screen mx-20 px-10">
+          <div className="flex-column shadow bg-gray-50 min-h-screen mx-20 ">
             {showBolsaTrabajadores ? (
               <>
                 <div>
@@ -38,19 +48,21 @@ const Bolsatrabajadores = () => {
                 </div>
               </>
             ) : (
-                <div className="pt-7 bg-white shadow">
-                   <h1 className="text-cyan-950 px-10 ml-20 text-lg">
-                     Ofertas de empleo otras empresas
-                  </h1>
-                 <QueYDonde />
+                <>
+              <div className="pt-4 bg-white shadow">
+                <h1 className="text-cyan-950 px-10 ml-20 text-lg">
+                  Ofertas de empleo otras empresas
+                </h1>
+                <QueYDonde />
                 <FormularioBusquedaAvanzada />
-              <ListadoOfertasSolicitudes />
-                </div>
+              </div>
+                <ListadoOfertasSolicitudes />
+                </>
+
             )}
           </div>
         </div>
       </div>
-      
     </>
   );
 };
