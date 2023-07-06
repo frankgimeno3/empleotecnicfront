@@ -10,6 +10,7 @@ import jwt_decode from 'jwt-decode';
 
 
 const Notificaciones = () => {
+  const [loggedUserName, setloggedUserName] = useState("Usuario")
   const [cookieValue, setCookieValue] = useState<{
     authValue: string | undefined;
     iat: number;
@@ -32,7 +33,24 @@ const Notificaciones = () => {
     }
   }, []);
 
-  
+  fetch(`http://localhost:5000/users/${cookieValue.authValue}`, {
+    method: "GET",
+  })
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } 
+  })
+  .then((response) => {
+    // const { accessToken } = response
+    // console.log("Token:", accessToken);
+    console.log(response.fullname);
+    setloggedUserName(response.fullname)
+  })
+  .catch((error) => {
+    console.error("Ha ocurrido un error con el name:", error);
+    // Maneja el error de conexión o cualquier otro error
+  });
 
   return (
     <>
@@ -40,7 +58,7 @@ const Notificaciones = () => {
       <div className="mt-5 pt-5  bg-gray-100">
         <div className="pt-7 pb-3 px-20 bg-white  shadow">
           <h1 className="text-cyan-950 px-10 text-xl ">
-            Saludos, <span className="font-bold">{cookieValue.authValue}</span>
+            Saludos, <span className="font-bold">{loggedUserName}</span>
           </h1>
         </div>
 
