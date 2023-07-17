@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-interface Oferta {
+export interface Oferta {
   _id: string;
   titulo: string;
   nombreEmpresa: string;
