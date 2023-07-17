@@ -38,7 +38,7 @@ const NavbarIn: React.FC = () => {
   
 
   return (
-    <nav className="flex flex-col  bg-cyan-950 bg-opacity-60 backdrop-filter backdrop-blur-lg items-center justify-left px-4 py-2 md:text-xs xl:text-base">
+    <nav className="fixed flex flex-col  bg-cyan-950 bg-opacity-60 backdrop-filter backdrop-blur-lg items-center justify-left px-4 py-2 md:text-xs xl:text-base">
        
       <div className="flex flex-col">
         <button

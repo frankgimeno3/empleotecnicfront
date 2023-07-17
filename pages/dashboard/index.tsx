@@ -55,8 +55,8 @@ const Notificaciones = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-row mt-5 pt-5 w-screen  ">
-        <Navbarleft />
+      <div className="flex flex-row mt-10 pt-5 w-screen  ">
+        {/* <Navbarleft /> */}
         <div className="flex flex-col w-full">
           <div className="bg-gray-100">
             <div className="pt-7 pb-3 px-20 bg-white  shadow">
