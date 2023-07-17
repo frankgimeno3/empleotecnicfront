@@ -3,6 +3,7 @@ import Navbar from "../../../components/Navbar/NavbarIn";
 import Pregunta1 from "../../../components/Dashboard/publicaroferta/pregunta1"
 import Pregunta2 from "../../../components/Dashboard/publicaroferta/pregunta2"
 import Pregunta3 from "../../../components/Dashboard/publicaroferta/pregunta3"
+import Pregunta4 from "../../../components/Dashboard/publicaroferta/pregunta4"
 import Resultado  from "../../../components/Dashboard/publicaroferta/resultado"
 
 const PublicarOferta = () => {
@@ -31,7 +32,19 @@ const PublicarOferta = () => {
               setComponenteActual={setComponenteActual}
              />
           );
+          case "pregunta4":
+            return (
+              <Pregunta4
+                setComponenteActual={setComponenteActual}
+               />
+            );
 
+            case "Resultado":
+              return (
+                <Resultado
+                  />
+              );
+  
     default:
       return null;
   }

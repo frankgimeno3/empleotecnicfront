@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-interface pregunta3Props {
+interface pregunta4Props {
   setComponenteActual: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const pregunta3: React.FC<pregunta3Props> = ({ setComponenteActual }) => {
+const pregunta4: React.FC<pregunta4Props> = ({ setComponenteActual }) => {
   const handleSeguirClick = () => {
-    setComponenteActual("pregunta4");
+    setComponenteActual("resultado");
   };
   const handleSeguirClickBack = () => {
-    setComponenteActual("pregunta2");
+    setComponenteActual("pregunta3");
   };
 
   return (
@@ -68,4 +68,4 @@ const pregunta3: React.FC<pregunta3Props> = ({ setComponenteActual }) => {
   );
 };
 
-export default pregunta3;
+export default pregunta4;
