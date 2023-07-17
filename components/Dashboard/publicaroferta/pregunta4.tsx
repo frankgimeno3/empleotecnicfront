@@ -27,59 +27,26 @@ const pregunta4: React.FC<pregunta4Props> = ({ setComponenteActual }) => {
         <div className="my-10">
           <label htmlFor="titulo" className="block mb-2">
             {" "}
-            Qué rango salarial se ofrece?{" "}
+            Qué requisitos debe cumplir el perfil que busca?{" "}
           </label>
           <div className="flex flex-row justify-center align-center text-center">
-            <h3>Entre </h3>
-            <input
-              type="text"
-              placeholder="ejemplo: 18"
-              id="titulo"
-              name="titulo"
-              // value={titulo}
-              // onChange={handleChange}
-              className=" mx-5 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center"
-              required
-            />
-            <h3>€/hora y </h3>
-            <input
-              type="text"
-              placeholder="ejemplo: 22"
-              id="titulo"
-              name="titulo"
-              // value={titulo}
-              // onChange={handleChange}
-              className=" mx-5 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center"
-              required
-            />
-            <h3>€/hora </h3>
+          <textarea
+                    className="rounded-lg shadow-lg p-4 w-96 h-24 mt-2 text-xs"
+                    required
+                  />
           </div>
         </div>
-
-        <div className="mb-4 flex flex-row justify-center my-10">
-          <label htmlFor="jornada">Qué tipo de jornada va a realizar?</label>
-          <select
-            id="jornada"
-            //   value={selectedOption}
-            //   onChange={handleSelectChange}
-            className="bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center mx-5"
-          >
-            <option className="py-2" value="">Seleccione una opción</option>
-            <option className="py-2" value="Tiempo Completo">Tiempo Completo</option>
-            <option className="py-2" value="Tiempo Parcial">Tiempo Parcial</option>
-          </select>
-        </div>
-        <div className="mb-4 flex flex-row justify-center my-10 ">
-          <label htmlFor="jornada">Qué días se va a trabajar?</label>
-          <select
-            id="jornada"
-            //   value={selectedOption}
-            //   onChange={handleSelectChange}
-            className="bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center mx-5"
-          >
-            <option className="py-2" value="">De lunes a viernes</option>
-            <option className="py-2" value="Tiempo Completo">Rotativo</option>
-           </select>
+        <div className="my-10">
+          <label htmlFor="titulo" className="block mb-2">
+            {" "}
+            Especificaciones adicionales del empleo{" "}
+          </label>
+          <div className="flex flex-row justify-center align-center text-center  ">
+          <textarea
+                    className="rounded-lg shadow-lg p-4 w-96 h-24 mt-2 text-xs"
+                    required
+                  />
+          </div>
         </div>
          
          <div className="mx-20">

@@ -2,13 +2,15 @@ import React, { useState } from "react";
 
 interface pregunta1Props {
   setComponenteActual: React.Dispatch<React.SetStateAction<string>>;
+  settitulo: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual }) => {
+const pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual, settitulo}) => {
     const handleSeguirClick = () => {
         setComponenteActual("pregunta2");
+        settitulo(tituloConjunto)
       };
-
+      const tituloConjunto = ""
   return (
     <form className=" mx-20 px-20 bg-white mt-2 py-10">
       <div className="flex flex-col justify-center text-center align-center mx-20 px-20">

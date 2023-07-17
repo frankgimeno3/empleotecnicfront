@@ -81,6 +81,24 @@ const pregunta3: React.FC<pregunta3Props> = ({ setComponenteActual }) => {
             <option className="py-2" value="Tiempo Completo">Rotativo</option>
            </select>
         </div>
+
+        <div className="mb-4 flex flex-row justify-center my-10 ">
+          <label htmlFor="jornada">Qué tipo de turno se va a aplicar?</label>
+          <select
+            id="jornada"
+            //   value={selectedOption}
+            //   onChange={handleSelectChange}
+            className="bg-white border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center mx-5"
+          >
+            <option className="py-2" value="">Diurno</option>
+            <option className="py-2" value="Tiempo Completo">Nocturno</option>
+            <option className="py-2" value="Tiempo Completo">Mañanas y tardes</option>
+            <option className="py-2" value="Tiempo Completo">Rotativo</option>
+           </select>
+           <h3 className="checkbox-label">Incluye fines de semana o festivos?</h3>
+            <input type="checkbox"/>
+        </div>
+        
          
          <div className="mx-20">
           <button

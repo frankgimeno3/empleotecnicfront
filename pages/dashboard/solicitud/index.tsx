@@ -70,17 +70,7 @@ const Solicitud = () => {
                     required
                   />
                </div>
-              <div className="mt-10">
-                <label>
-                  Sexo:
-                  </label>
-<br/>
-                  <input
-                    type="text"
-                    className="rounded-lg shadow-lg p-2  mt-2"
-                    required
-                  />
-               </div>
+              
               <div className="mt-10">
                 <label>
                   Documento de identidad:
