@@ -9,20 +9,23 @@ import Resultado  from "../../../components/Dashboard/publicaroferta/resultado"
 const PublicarOferta = () => {
   const [componenteactual, setComponenteActual] = useState("pregunta1");
   const [titulo, settitulo] = useState("");
+  const [provincia, setprovincia] = useState("");
+  const [localidad, setlocalidad] = useState("");
+  const [direccion, setdireccion] = useState("");
 
   const renderComponenteActual = () => {
   switch (componenteactual) {
     case "pregunta1":
       return (
         <Pregunta1
-          setComponenteActual={setComponenteActual} settitulo={settitulo}
+          setComponenteActual={setComponenteActual} settitulo={settitulo} 
          />
       );
 
       case "pregunta2":
         return (
           <Pregunta2
-            setComponenteActual={setComponenteActual}
+            setComponenteActual={setComponenteActual} setprovincia={setprovincia} setlocalidad={setlocalidad} setdireccion={setdireccion}
            />
         );
 
