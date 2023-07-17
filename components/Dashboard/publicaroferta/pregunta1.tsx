@@ -3,25 +3,27 @@ import React, { useState } from "react";
 interface pregunta1Props {
   setComponenteActual: React.Dispatch<React.SetStateAction<string>>;
   settitulo: React.Dispatch<React.SetStateAction<string>>;
+  setdescripcion: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const useInputState = (initialValue: string) => {
   const [value, setValue] = useState<string>(initialValue);
   return {
     value,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value),
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setValue(e.target.value),
   };
 };
 
-const Pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual, settitulo }) => {
+const Pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual, settitulo, setdescripcion }) => {
   const tipoempleadoState = useInputState("");
   const departamentoState = useInputState("");
+  const descripcion = useInputState("");
 
   const handleSeguirClick = () => {
     const tituloConjunto = `${tipoempleadoState.value} - ${departamentoState.value}`;
     setComponenteActual("pregunta2");
     settitulo(tituloConjunto);
-    console.log(tituloConjunto)
+    setdescripcion(descripcion.value);
   };
 
   return (
@@ -54,6 +56,15 @@ const Pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual, settitulo })
               placeholder="ejemplo: Extrusión de aluminio industrial"
               className="w-full border border-gray-300 rounded py-2 px-4 focus:outline-none focus:border-blue-500 text-center"
               required
+            />
+          </div>
+          <h3>Por favor, añada a continuación una descripción detallada del empleo que ofrece</h3>
+          <div className="flex flex-row justify-center align-center text-center">
+            <textarea
+              id="descripcion"
+              className="rounded-lg shadow-lg p-4 w-96 h-24 mt-2 text-xs"
+              required
+              {...descripcion}
             />
           </div>
           <div className="mx-20">
