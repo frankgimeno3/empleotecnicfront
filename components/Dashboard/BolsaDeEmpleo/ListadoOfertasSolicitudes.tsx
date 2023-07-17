@@ -3,8 +3,16 @@ import OfferCard from './Offercard';
 
 interface Oferta {
   _id: string;
-  cuentaemisora: string;
-  contenido: string;
+  titulo: string;
+  nombreEmpresa: string;
+  sector: string;
+  descripcion: string;
+  salariohora: string;
+  jornada: string;
+  diaslaborables: string;
+  ubicacion: string;
+  beneficios: string;
+  requisitosadicionales: string;
 }
 
 const ListadoOfertasSolicitudes: React.FC = () => {

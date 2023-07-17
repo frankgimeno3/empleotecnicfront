@@ -49,83 +49,81 @@ const Solicitud = () => {
           <>
             <form className="mt-6 ml-20" onSubmit={handleSubmit}>
               <div className="mt-10">
-                <label>
+                <label  >
                   Nombre y apellidos:
+                  </label>
+<br/>
                   <input
                     type="text"
-                    className="rounded-lg shadow-lg p-2"
+                    className="rounded-lg shadow-lg p-2  mt-2"
                     required
                   />
-                </label>
               </div>
               <div className="mt-10">
                 <label>
                   Nacionalidad:
+                  </label>
+<br/>
                   <input
                     type="text"
-                    className="rounded-lg shadow-lg p-2"
+                    className="rounded-lg shadow-lg p-2  mt-2"
                     required
                   />
-                </label>
-              </div>
-              <div className="mt-10">
-                <label>
-                  Sexo:
-                  <input
-                    type="text"
-                    className="rounded-lg shadow-lg p-2"
-                    required
-                  />
-                </label>
-              </div>
+               </div>
+              
               <div className="mt-10">
                 <label>
                   Documento de identidad:
+                  </label>
+<br/>
                   <input
                     type="text"
-                    className="rounded-lg shadow-lg p-2"
+                    className="rounded-lg shadow-lg p-2  mt-2"
                     required
                   />
-                </label>
-              </div>
+               </div>
               <div className="mt-10">
                 <label>
                   Permiso de trabajo:
+                  </label>
+<br/>
                   <input
                     type="text"
-                    className="rounded-lg shadow-lg p-2"
+                    className="rounded-lg shadow-lg p-2  mt-2"
                     required
                   />
-                </label>
-              </div>
+               </div>
               <div className="mt-10">
                 <label>
                   Disponibilidad inmediata?
+                  </label>
+<br/>
                   <input
                     type="text"
-                    className="rounded-lg shadow-lg p-2"
+                    className="rounded-lg shadow-lg p-2  mt-2"
                     required
                   />
-                </label>
-              </div>
+               </div>
               <div className="mt-10">
                 <label>
                   Estudios:
+                  </label>
+<br/>
                   <textarea
-                    className="rounded-lg shadow-lg p-2 w-96 h-20"
+                    className="rounded-lg shadow-lg p-2 w-96 h-20 mt-2"
                     required
                   />
-                </label>
-              </div>
+               </div>
               <div className="mt-10">
                 <label>
                   Experiencia anterior:
+                  </label>
+<br/>
                   <textarea
-                    className="rounded-lg shadow-lg p-2 w-96 h-20"
+                    className="rounded-lg shadow-lg p-2  w-96 h-20 mt-2"
                     required
                   />
-                </label>
-              </div>
+               </div>
               <button
                 type="submit"
                 className="mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

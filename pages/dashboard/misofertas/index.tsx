@@ -1,7 +1,34 @@
 import OfertaSolicitada from "../../../components/Dashboard/MisSolicitudes/OfertaSolicitada";
 import Navbar from "../../../components/Navbar/NavbarIn";
+import React, { useEffect, useState } from 'react';
+
+interface Oferta {
+  _id: string;
+  titulo: string;
+  nombreEmpresa: string;
+  sector: string;
+  descripcion: string;
+  salariohora: string;
+  jornada: string;
+  diaslaborables: string;
+  ubicacion: string;
+  beneficios: string;
+  requisitosadicionales: string;
+}
 
 const MisOfertas = () => {
+  const [ofertas, setOfertas] = useState<Oferta[]>([]);
+
+  const peticion = async () => {
+    const res = await fetch('http://localhost:5000/ofertas/');
+    const jsonOfferList: Oferta[] = await res.json();
+    setOfertas(jsonOfferList);
+  };
+
+  useEffect(() => {
+    peticion();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -20,7 +47,7 @@ const MisOfertas = () => {
                 className="text-black font-bold ml-5 text-xs pt-5 pb-2 "
                 style={{ fontSize: "0.75rem" }}
               >
-                Resumen Solicitudes enviadas
+                Resumen Ofertas Publicadas
               </h3>
               <div className=" mb-1 shadow w-50vw bg-stone-100 block px-10 py-2.5 relative text-sm hover:bg-stone-200 ">
                 <h2 className="text-black font-bold text-xs">

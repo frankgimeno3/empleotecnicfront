@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
 const NavbarIn: React.FC = () => {
   const [selectedButton, setSelectedButton] = useState("Notificaciones");
@@ -10,9 +10,15 @@ const NavbarIn: React.FC = () => {
     const currentPath = router.pathname;
     if (currentPath === "/dashboard") {
       setSelectedButton("Notificaciones");
-    } else if (currentPath === "/dashboard/bolsadeempleo" || currentPath === "/dashboard/solicitud" ) {
+    } else if (
+      currentPath === "/dashboard/bolsadeempleo" ||
+      currentPath === "/dashboard/solicitud"
+    ) {
       setSelectedButton("BolsaDeEmpleo");
-    } else if (currentPath === "/dashboard/bolsatrabajadores" || currentPath === "/dashboard/bolsatrabajadores" ) {
+    } else if (
+      currentPath === "/dashboard/bolsatrabajadores" ||
+      currentPath === "/dashboard/bolsatrabajadores"
+    ) {
       setSelectedButton("Bolsatrabajadores");
     } else if (currentPath === "/dashboard/misofertas") {
       setSelectedButton("MisOfertas");
@@ -29,107 +35,101 @@ const NavbarIn: React.FC = () => {
     }
   }, [router.pathname]);
 
-  const handleLogout = async () => {
-    Cookies.remove('authvalue');
-    try {
-      const res = await fetch("http://localhost:5000/auth/logout", {
-        method: "POST",
-        credentials: "include", // Para enviar las cookies al servidor
-      });
-      if (res.status === 200) {
-        // Se ha cerrado sesión con éxito
-        router.push("/login"); // Redirige al usuario a la página de inicio de sesión
-      } else {
-        // Manejar el caso de error si no se pudo cerrar sesión
-        console.error("No se pudo cerrar sesión");
-      }
-    } catch (error) {
-      console.error("Error al cerrar sesión", error);
-    }
-    router.push("/");
-  };
+  
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-cyan-950 bg-opacity-60 backdrop-filter backdrop-blur-lg flex items-center justify-between px-4 py-2 md:text-xs xl:text-base shadow">
-      <button
-        className={`bg-opacity-25 text-white rounded-full py-2 px-3 border-2 hover:bg-white hover:text-cyan-950  hover:cursor-pointer ${
-          selectedButton === "Notificaciones" ? "bg-white bg-opacity-50 text-cyan-950" : ""
-        }`}
-        onClick={() => router.push("/dashboard")}
-      >
-        E
-      </button>
-      <div>
-      <button  style={{fontSize:'0.60rem'}}
+    <nav className="fixed flex flex-col  bg-cyan-950 bg-opacity-60 backdrop-filter backdrop-blur-lg items-center justify-left px-4 py-2 md:text-xs xl:text-base">
+       
+      <div className="flex flex-col">
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "BolsaDeEmpleo" ? "bg-white text-cyan-950 bg-opacity-50" : ""
+            selectedButton === "BolsaDeEmpleo"
+              ? "bg-white text-cyan-950 bg-opacity-50"
+              : ""
           }`}
           onClick={() => router.push("/dashboard/bolsadeempleo")}
         >
           Bolsa de Empleo
         </button>
-        <button  style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "Bolsatrabajadores" ? "bg-white text-cyan-950 bg-opacity-50" : ""
+            selectedButton === "Bolsatrabajadores"
+              ? "bg-white text-cyan-950 bg-opacity-50"
+              : ""
           }`}
           onClick={() => router.push("/dashboard/bolsatrabajadores")}
         >
           Bolsa de Trabajadores
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MisOfertas" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
+            selectedButton === "MisOfertas"
+              ? "bg-white bg-opacity-50 text-cyan-950 "
+              : ""
           }`}
           onClick={() => router.push("/dashboard/misofertas")}
         >
           Mis Ofertas
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MisSolicitudes" ? "bg-white bg-opacity-50 text-cyan-950 " : ""
+            selectedButton === "MisSolicitudes"
+              ? "bg-white bg-opacity-50 text-cyan-950 "
+              : ""
           }`}
           onClick={() => router.push("/dashboard/missolicitudes")}
         >
           Mis Solicitudes
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "PublicarOferta" ? "bg-white bg-opacity-50 text-cyan-950" : ""
+            selectedButton === "PublicarOferta"
+              ? "bg-white bg-opacity-50 text-cyan-950"
+              : ""
           }`}
           onClick={() => router.push("/dashboard/publicaroferta")}
         >
           Publicar Oferta
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "ProcesosActivos" ? "bg-white bg-opacity-50 text-cyan-950" : ""
+            selectedButton === "ProcesosActivos"
+              ? "bg-white bg-opacity-50 text-cyan-950"
+              : ""
           }`}
           onClick={() => router.push("/dashboard/procesosactivos")}
         >
           Procesos activos
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MiPerfil" ? "bg-white bg-opacity-50 text-cyan-950" : ""
+            selectedButton === "MiPerfil"
+              ? "bg-white bg-opacity-50 text-cyan-950"
+              : ""
           }`}
           onClick={() => router.push("/perfil")}
         >
           Mi Perfil
         </button>
-        <button style={{fontSize:'0.60rem'}}
+        <button
+          style={{ fontSize: "0.60rem" }}
           className={`bg-opacity-5 text-white rounded-md mr-1 py-2 px-4 hover:bg-white hover:bg-opacity-50 hover:text-cyan-950  hover:cursor-pointer ${
-            selectedButton === "MiPerfil2" ? "bg-white bg-opacity-50 text-cyan-950" : ""
+            selectedButton === "MiPerfil2"
+              ? "bg-white bg-opacity-50 text-cyan-950"
+              : ""
           }`}
           onClick={() => router.push("/perfil2")}
         >
           Mi Perfil2
         </button>
-        <button style={{fontSize:'0.60rem'}}
-          onClick={handleLogout}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        >
-          Cerrar sesión
-        </button>
+ 
       </div>
     </nav>
   );
