@@ -9,25 +9,17 @@ const pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual }) => {
         setComponenteActual("pregunta2");
       };
 
-
   return (
     <form className=" mx-20 px-20 bg-white mt-2 py-10">
       <div className="flex flex-col justify-center text-center align-center mx-20 px-20">
         <div className="mb-10">
-          <h1 className="font-bold text-3xl">
-            {" "}
-            Proceso de creación de ofertas{" "}
-          </h1>
-          <p>
-            Conteste a las siguientes preguntas para crear una oferta de empleo
-          </p>
+          <h1 className="font-bold text-3xl">Proceso de creación de ofertas</h1>
+          <p> Conteste a las siguientes preguntas para crear una oferta de empleo</p>
         </div>
         <div className="mx-20 px-20">
           <h2 className="font-bold"> Sección 1/3 - Titular de la oferta </h2>
           <div className="mb-4">
-            <label htmlFor="titulo" className="block mb-2">
-              Qué tipo de empleado necesita?
-            </label>
+            <label htmlFor="titulo" className="block mb-2"> Qué tipo de empleado necesita? </label>
             <input
               type="text"
               placeholder="ejemplo: Operario de fábrica"
@@ -41,9 +33,7 @@ const pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual }) => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="empresa" className="block mb-2">
-              En qué departamento trabajará el empleado?
-            </label>
+            <label htmlFor="empresa" className="block mb-2"> En qué departamento trabajará el empleado? </label>
             <input
               type="text"
               id="empresa"
