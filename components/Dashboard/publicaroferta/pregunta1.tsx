@@ -17,7 +17,7 @@ const pregunta1: React.FC<pregunta1Props> = ({ setComponenteActual }) => {
           <p> Conteste a las siguientes preguntas para crear una oferta de empleo</p>
         </div>
         <div className="mx-20 px-20">
-          <h2 className="font-bold"> Sección 1/3 - Titular de la oferta </h2>
+          <h2 className="font-bold"> Sección 1/4 - Titular de la oferta </h2>
           <div className="mb-4">
             <label htmlFor="titulo" className="block mb-2"> Qué tipo de empleado necesita? </label>
             <input
