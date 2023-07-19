@@ -2,6 +2,8 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import Layout from '../components/Layout';
 import Head from 'next/head';
+ 
+// import { AuthProviderWrapper } from '../context/auth.context'; 
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -12,9 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/icons/minimal.png" />
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <AuthProviderWrapper> */}
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      {/* </AuthProviderWrapper> */}
+
     </>
   );
 }

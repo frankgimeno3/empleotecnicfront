@@ -67,6 +67,7 @@ const PublicarOferta = () => {
       case "Resultado":
         return (
           <Resultado
+            setComponenteActual={setComponenteActual}
             titulo={titulo}
             descripcion={descripcion}
             provincia={provincia}

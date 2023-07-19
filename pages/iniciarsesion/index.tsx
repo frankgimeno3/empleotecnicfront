@@ -32,7 +32,7 @@ const IniciarSesion = () => {
       .then(response => {
         // const { accessToken } = response
         // console.log("Token:", accessToken);
-        console.log(response.authToken);
+        // console.log(response.authToken);
   
         Cookies.set('authvalue', response.authToken, cookieOptions); // Crear cookie con el valor del email
         router.push("/dashboard");
