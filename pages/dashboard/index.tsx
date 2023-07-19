@@ -1,57 +1,15 @@
 import Tarjetanotificacion from "../../components/Dashboard/Tarjetanotificacion";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar/NavbarIn";
-import Navbarleft from "../../components/Navbar/Navbarleft";
 import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
+import { GetServerSideProps, NextPage } from 'next';
 
-// interface Payload {
-//   email: string;
-// }
+interface NotificacionesProps {
+  loggedUserName: string;
+}
 
-const Notificaciones = () => {
-  const [loggedUserName, setloggedUserName] = useState("Usuario");
-  const [cookieValue, setCookieValue] = useState<{
-    authValue: string | undefined;
-    iat: number;
-    exp: number;
-  }>({
-    authValue: undefined,
-    iat: 0,
-    exp: 0,
-  });
-
-  useEffect(() => {
-    const value = Cookies.get("authvalue");
-    if (value) {
-      const decodedValue = jwt_decode(value) as {
-        authValue: string | undefined;
-        iat: number;
-        exp: number;
-      };
-      setCookieValue(decodedValue);
-    }
-  }, []);
-
-  fetch(`http://localhost:5000/users/${cookieValue.authValue}`, {
-    method: "GET",
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-    })
-    .then((response) => {
-      // const { accessToken } = response
-      // console.log("Token:", accessToken);
-      console.log(response.fullname);
-      setloggedUserName(response.fullname);
-    })
-    .catch((error) => {
-      console.error("Ha ocurrido un error con el name:", error);
-      // Maneja el error de conexión o cualquier otro error
-    });
-
+const Notificaciones: NextPage<NotificacionesProps> = ({ loggedUserName }) => {
   return (
     <div>
       <Navbar />
@@ -97,4 +55,69 @@ const Notificaciones = () => {
   );
 };
 
+
 export default Notificaciones;
+
+export const getServerSideProps: GetServerSideProps<NotificacionesProps> = async (context) => {
+  const value = Cookies.get("authvalue");
+  let loggedUserName = "Usuario"; // Valor por defecto si no se encuentra el usuario
+
+  if (value) {
+    const decodedValue = jwt_decode(value) as { authValue: string };
+    const authValue = decodedValue.authValue;
+
+    if (authValue) {
+      // Aplicamos el middleware para verificar si el usuario está autenticado
+      const response = await authMiddleware(context.req);
+
+      if (response) {
+        // Si el middleware redirige, devolvemos la respuesta para abortar la carga de la página
+        return response;
+      }
+
+      // Si el middleware no redirige, obtenemos los datos del usuario
+      const userResponse = await fetch(`http://localhost:5000/users/${authValue}`, {
+        method: "GET",
+      });
+
+      if (userResponse.ok) {
+        const userData = await userResponse.json();
+        loggedUserName = userData.fullname;
+      } else {
+        // Manejar el caso en el que no se pueda obtener los datos del usuario
+        console.error("Ha ocurrido un error al obtener los datos del usuario");
+      }
+    }
+  }
+
+  return {
+    props: {
+      loggedUserName,
+    },
+  };
+};
+
+async function authMiddleware(req: any) {
+  let verify = req.cookies.get('loggedin');
+  let url = req.url;
+
+  if (!verify && url.includes('/dashboard')) {
+    return {
+      redirect: {
+        destination: 'http://localhost:3000/',
+        permanent: false,
+      },
+    };
+  }
+
+  if (verify && url === 'http://localhost:3000/') {
+    return {
+      redirect: {
+        destination: 'http://localhost:3000/dashboard',
+        permanent: false,
+      },
+    };
+  }
+
+  return null;
+}
